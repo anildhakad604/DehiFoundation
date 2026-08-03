@@ -1,26 +1,89 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-cream: #fdfaf3;
+  --color-cream-deep: #f5efe0;
+  --color-forest: #2f5233;
+  --color-forest-deep: #1e3a22;
+  --color-gold: #c99a3d;
+  --color-gold-light: #e0b968;
+  --color-brown: #6b4423;
+  --color-brown-deep: #4a2e17;
+  --color-navy: #182642;
+  --color-navy-deep: #0f1a2e;
+  --color-ember: #e08a3e;
+
+  --background: var(--color-cream);
+  --foreground: var(--color-navy-deep);
 }
 
 @theme inline {
+  --color-cream: var(--color-cream);
+  --color-cream-deep: var(--color-cream-deep);
+  --color-forest: var(--color-forest);
+  --color-forest-deep: var(--color-forest-deep);
+  --color-gold: var(--color-gold);
+  --color-gold-light: var(--color-gold-light);
+  --color-brown: var(--color-brown);
+  --color-brown-deep: var(--color-brown-deep);
+  --color-navy: var(--color-navy);
+  --color-navy-deep: var(--color-navy-deep);
+  --color-ember: var(--color-ember);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-serif: var(--font-playfair);
+  --font-sans: var(--font-inter);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+}
+
+h1, h2, h3, h4, .font-serif {
+  font-family: var(--font-serif);
+}
+
+::selection {
+  background: var(--color-gold);
+  color: var(--color-navy-deep);
+}
+
+/* subtle grain / warmth overlay used across sections */
+.texture-overlay {
+  position: relative;
+}
+.texture-overlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(circle at 1px 1px, rgba(107, 68, 35, 0.08) 1px, transparent 0);
+  background-size: 22px 22px;
+  opacity: 0.5;
+}
+
+.gold-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-up {
+  animation: fade-up 0.8s ease forwards;
 }
