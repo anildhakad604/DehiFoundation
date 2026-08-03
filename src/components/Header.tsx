@@ -31,7 +31,7 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 flex items-center justify-between h-20">
+      <div className="px-6 lg:px-10 flex items-center justify-between h-20">
         <Link href="#top" className="flex items-center gap-3 group">
           <span className="relative h-12 w-12 shrink-0 rounded-full overflow-hidden ring-1 ring-gold/40 bg-cream">
             <Image
