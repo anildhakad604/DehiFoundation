@@ -1,4 +1,5 @@
 import { Header } from "@/components/Header";
+import { BannerSlider } from "@/components/BannerSlider";
 import { Hero } from "@/components/Hero";
 import { Mission } from "@/components/Mission";
 import { Impact } from "@/components/Impact";
@@ -12,6 +13,7 @@ export default function Home() {
     <>
       <Header />
       <main className="flex-1">
+        <BannerSlider />
         <Hero />
         <Mission />
         <Impact />

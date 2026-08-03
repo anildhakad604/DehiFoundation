@@ -127,6 +127,34 @@ export function IconBird(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+export function IconChevronLeft(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" {...props}>
+      <path
+        d="M15 5l-7 7 7 7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconChevronRight(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" {...props}>
+      <path
+        d="M9 5l7 7-7 7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
 export function IconHeart(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 48 48" fill="none" {...props}>

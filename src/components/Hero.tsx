@@ -5,12 +5,10 @@ import { motion } from "framer-motion";
 
 export function Hero() {
   return (
-    <section
-      id="top"
-      className="relative overflow-hidden bg-gradient-to-b from-cream via-cream to-cream-deep pt-32 pb-24 lg:pt-40 lg:pb-32"
-    >
+    <section className="relative overflow-hidden bg-gradient-to-b from-cream via-cream to-cream-deep pt-24 pb-24 lg:pt-28 lg:pb-32">
       {/* decorative radial glow */}
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[radial-gradient(circle,rgba(201,154,61,0.16)_0%,rgba(201,154,61,0)_65%)]" />
+
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
