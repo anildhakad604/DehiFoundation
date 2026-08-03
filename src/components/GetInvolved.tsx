@@ -29,7 +29,6 @@ export function GetInvolved() {
       className="relative overflow-hidden bg-forest-deep py-24 lg:py-28"
     >
       <div className="pointer-events-none absolute -left-32 -bottom-32 h-[500px] w-[500px] rounded-full bg-[radial-gradient(circle,rgba(224,138,62,0.2)_0%,transparent_70%)]" />
-      <div className="pointer-events-none absolute -right-24 -top-24 h-[420px] w-[420px] rounded-full border border-gold/20" />
 
       <div className="relative mx-auto max-w-7xl px-6 lg:px-10">
         <Reveal className="mx-auto max-w-2xl text-center">
