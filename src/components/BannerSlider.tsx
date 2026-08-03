@@ -9,7 +9,6 @@ const SLIDES = [
   { src: "/SliderBanner1.png", alt: "Dehi Foundation volunteers and families planting trees together" },
   { src: "/SliderBanner2.png", alt: "Dehi Foundation — Nourishing Souls, Enriching Lives: food, education, healthcare and care & support" },
   { src: "/SliderBanner3.png", alt: "Dehi Foundation families and volunteers united under Nourishing Souls, Enriching Lives" },
-  { src: "/SliderBanner4.png", alt: "Dehi Foundation — food distribution, education, healthcare, animal welfare and community empowerment" },
   { src: "/SliderBanner5.png", alt: "Dehi Foundation — Empowering Communities, Building a Better Tomorrow" },
 ];
 
