@@ -1,11 +1,11 @@
 import { Reveal } from "./Reveal";
-import { IconBowl, IconTree, IconPaw, IconHands } from "./icons";
+import { IconBowl, IconGraduationCap, IconPaw, IconTree } from "./icons";
 
 const STATS = [
-  { icon: IconBowl, num: "1,20,000+", label: "Meals Served" },
-  { icon: IconTree, num: "8,500", label: "Trees Planted" },
-  { icon: IconPaw, num: "3,200", label: "Animals Cared For" },
-  { icon: IconHands, num: "60+", label: "Villages & Communities" },
+  { icon: IconBowl, num: "1,20,000+", label: "Meals & Essentials Delivered" },
+  { icon: IconGraduationCap, num: "850+", label: "Students Educated" },
+  { icon: IconPaw, num: "3,200+", label: "Animals & Birds Rescued" },
+  { icon: IconTree, num: "8,500+", label: "Trees Planted" },
 ];
 
 export function Impact() {

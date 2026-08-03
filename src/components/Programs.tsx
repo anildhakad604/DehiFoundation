@@ -1,38 +1,38 @@
 import { Reveal } from "./Reveal";
-import { IconBowl, IconTree, IconPaw, IconLight } from "./icons";
+import { IconBowl, IconGraduationCap, IconPaw, IconTree } from "./icons";
 
 const PROGRAMS = [
   {
     icon: IconBowl,
-    tag: "Annadaan · Food Seva",
-    title: "A warm meal, served with dignity",
-    desc: "Our kitchens and mobile ration drives deliver nutritious meals to underserved families, elders and children — because no soul should go hungry.",
-    stat: "1,20,000+ meals served",
+    tag: "Anna, Vastra & Awas Seva",
+    title: "Food, clothing and shelter for families in need",
+    desc: "Our kitchens, ration drives and relief camps deliver meals, clothing, blankets and emergency shelter to families who struggle to meet their most basic needs — with free medical camps for those who cannot afford care.",
+    stat: "1,20,000+ meals & essentials delivered",
     gradient: "from-brown to-brown-deep",
   },
   {
-    icon: IconTree,
-    tag: "Green Earth Drive",
-    title: "Rooting hope back into the land",
-    desc: "We plant and nurture native trees across villages and city belts, restoring shade, soil and clean air for generations to come.",
-    stat: "8,500 trees planted",
-    gradient: "from-forest to-forest-deep",
+    icon: IconGraduationCap,
+    tag: "Shiksha Seva · Education Support",
+    title: "Opening classroom doors for underprivileged students",
+    desc: "School fees, books, uniforms and after-school mentoring help talented children from economically weaker families stay in school and pursue the education they deserve.",
+    stat: "850+ students supported",
+    gradient: "from-navy to-navy-deep",
   },
   {
     icon: IconPaw,
-    tag: "Gau & Animal Seva",
-    title: "Compassion for every creature",
-    desc: "Feeding stations, water troughs and medical care support cows, strays and wildlife who share our streets and villages.",
-    stat: "3,200 animals cared for",
+    tag: "Prani Raksha · Animal & Bird Rescue",
+    title: "Rescuing and healing voiceless lives",
+    desc: "Our rescue teams and veterinary partners treat injured strays, abandoned pets and wounded birds, then nurse them back to health in safe shelters until they can be rehomed or released.",
+    stat: "3,200+ animals & birds rescued",
     gradient: "from-gold to-brown",
   },
   {
-    icon: IconLight,
-    tag: "Community & Spirit",
-    title: "Nourishing the soul within",
-    desc: "Free education support, counselling circles and spiritual gatherings help communities heal, learn and rediscover inner light.",
-    stat: "60+ communities reached",
-    gradient: "from-navy to-navy-deep",
+    icon: IconTree,
+    tag: "Prakriti Raksha · Wildlife & Environment",
+    title: "Protecting wildlife and the planet we share",
+    desc: "Native tree plantation, habitat restoration and clean-up drives protect the wild spaces that animals, birds and future generations depend on.",
+    stat: "8,500+ trees planted",
+    gradient: "from-forest to-forest-deep",
   },
 ];
 

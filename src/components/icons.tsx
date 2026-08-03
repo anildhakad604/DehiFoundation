@@ -61,20 +61,6 @@ export function IconPaw(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-export function IconLight(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 48 48" fill="none" {...props}>
-      <circle cx="24" cy="20" r="9" stroke="currentColor" strokeWidth="2" />
-      <path
-        d="M24 4v4M24 40v4M8 20H4M44 20h-4M11 7l3 3M37 7l-3 3M11 33l3-3M37 33l-3-3"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-      />
-    </svg>
-  );
-}
-
 export function IconHands(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 48 48" fill="none" {...props}>
@@ -150,6 +136,32 @@ export function IconChevronRight(props: React.SVGProps<SVGSVGElement>) {
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconGraduationCap(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" {...props}>
+      <path
+        d="M4 18 24 9l20 9-20 9-20-9Z"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M13 22.5v7c0 3 5 5.5 11 5.5s11-2.5 11-5.5v-7"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      <path
+        d="M40 19v11"
+        stroke="currentColor"
+        strokeWidth="2"
+        strokeLinecap="round"
       />
     </svg>
   );

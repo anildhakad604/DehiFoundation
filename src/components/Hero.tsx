@@ -26,9 +26,10 @@ export function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-deep/75">
-            Dehi Foundation stands beside the hungry, the earth, and every
-            living being in need — weaving food, nature, compassion and
-            spirit into one act of service.
+            Dehi Foundation stands beside underprivileged families, eager
+            young students, and the voiceless animals and birds who need us
+            most — providing food, shelter, education and medical care, one
+            act of compassion at a time.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -48,9 +49,9 @@ export function Hero() {
 
           <div className="mt-14 grid grid-cols-3 max-w-md gap-6 border-t border-gold/25 pt-8">
             {[
-              ["12k+", "Meals Served"],
-              ["8,500", "Trees Planted"],
-              ["3,200", "Animals Cared For"],
+              ["1,20,000+", "Meals & Essentials"],
+              ["850+", "Students Educated"],
+              ["3,200+", "Animals & Birds Rescued"],
             ].map(([num, label]) => (
               <div key={label}>
                 <p className="font-serif text-2xl font-bold text-forest-deep">

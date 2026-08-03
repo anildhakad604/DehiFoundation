@@ -42,8 +42,9 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-cream/60">
-              Nourishing souls and enriching lives through food, nature,
-              compassion and spirit — one act of service at a time.
+              Nourishing souls and enriching lives — through food, education,
+              medical care and shelter for people in need, and rescue and
+              protection for voiceless animals and birds.
             </p>
           </div>
 

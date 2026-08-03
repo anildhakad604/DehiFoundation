@@ -5,19 +5,19 @@ const WAYS = [
   {
     icon: IconDrop,
     title: "Donate",
-    desc: "Every rupee funds a meal, a sapling, or a moment of care for a being in need.",
+    desc: "Every rupee funds a meal, a child's education, or medical care for a rescued animal in need.",
     cta: "Give Now",
   },
   {
     icon: IconHands,
     title: "Volunteer",
-    desc: "Join a food drive, a plantation morning, or a community circle near you.",
+    desc: "Join a food distribution drive, mentor a student, or help care for rescued animals and birds near you.",
     cta: "Join Us",
   },
   {
     icon: IconBird,
     title: "Partner",
-    desc: "Bring your organisation alongside ours to scale compassion further.",
+    desc: "Bring your organisation alongside ours to expand food, education and animal rescue programmes further.",
     cta: "Collaborate",
   },
 ];
@@ -39,8 +39,9 @@ export function GetInvolved() {
             Your hands can carry this forward
           </h2>
           <p className="mt-4 text-base leading-relaxed text-cream/70">
-            Whichever way you choose to give, you become part of the circle
-            of hands that holds our work together.
+            Whichever way you choose to give, you help a family eat, a child
+            learn, or an animal heal — you become part of the circle of hands
+            that holds our work together.
           </p>
         </Reveal>
 

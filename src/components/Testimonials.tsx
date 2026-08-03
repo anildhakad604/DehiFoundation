@@ -4,21 +4,21 @@ import { IconHeart } from "./icons";
 const QUOTES = [
   {
     quote:
-      "When the volunteers arrived with food, they didn't just feed us — they sat and spoke with my grandmother like family. That warmth stays with you.",
+      "There were nights we had nothing to feed our children. Dehi Foundation's ration kits and warm meals meant my family never went to bed hungry again.",
     name: "Radha Devi",
-    role: "Community Member, Barabanki",
+    role: "Mother Supported Through Food Relief, Barabanki",
   },
   {
     quote:
-      "I've planted saplings with Dehi Foundation for two years now. Watching the first grove finally give shade felt like watching a promise kept.",
-    name: "Arjun Mehta",
-    role: "Volunteer, Green Earth Drive",
+      "After my father passed away, there was no money for books or fees. Dehi Foundation's scholarship let me stay in school — I want to become a teacher one day.",
+    name: "Priya Sharma",
+    role: "Scholarship Student, Class 10",
   },
   {
     quote:
-      "Our shelter partners with them for the winter feeding drives. The dogs and cows in our lane are healthier than they've ever been.",
+      "We found her abandoned by the roadside, injured and starving. Dehi Foundation's rescue team treated her, and today she runs free and healthy in our shelter.",
     name: "Sr. Kavita Joshi",
-    role: "Animal Welfare Partner",
+    role: "Animal Rescue Partner",
   },
 ];
 

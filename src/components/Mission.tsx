@@ -1,26 +1,26 @@
 import { Reveal } from "./Reveal";
-import { IconBowl, IconTree, IconPaw, IconLight } from "./icons";
+import { IconBowl, IconGraduationCap, IconPaw, IconTree } from "./icons";
 
 const PILLARS = [
   {
     icon: IconBowl,
-    title: "Nourish the Body",
-    desc: "Warm meals and daily rations reach families and elders who would otherwise go without — food shared as an act of reverence.",
+    title: "Feed, Clothe & Shelter",
+    desc: "Warm meals, clothing, safe shelter and medical care reach families who have nowhere else to turn — because dignity should never depend on income.",
   },
   {
-    icon: IconTree,
-    title: "Nurture the Earth",
-    desc: "Tree plantation and community greening drives restore the land that sustains us, one sapling at a time.",
+    icon: IconGraduationCap,
+    title: "Educate the Underprivileged",
+    desc: "School fees, books and mentoring help bright children from economically weak families stay in school and dream bigger.",
   },
   {
     icon: IconPaw,
-    title: "Care for Every Being",
-    desc: "Feeding stations, water bowls and shelter support strays and animals across the villages and cities we serve.",
+    title: "Rescue Every Creature",
+    desc: "Injured, abandoned and voiceless animals and birds are rescued, treated and rehomed with the same compassion we'd want for our own.",
   },
   {
-    icon: IconLight,
-    title: "Uplift the Spirit",
-    desc: "Counselling, education and gentle community spaces nourish the soul within — the true meaning of Dehi.",
+    icon: IconTree,
+    title: "Protect Nature & Wildlife",
+    desc: "Tree plantation, habitat protection and clean-up drives safeguard the wild spaces that animals and future generations depend on.",
   },
 ];
 
@@ -37,9 +37,10 @@ export function Mission() {
             &ldquo;the soul within the body.&rdquo;
           </h2>
           <p className="mt-5 text-base leading-relaxed text-navy-deep/70">
-            We believe true service tends to both — the body that hungers and
-            the soul that longs for dignity, connection and light. Every
-            programme we run rests on four pillars.
+            We believe true service tends to both the vulnerable among us and
+            the voiceless around us — underprivileged families, eager
+            students, and animals and birds with no one else to turn to.
+            Every programme we run rests on four pillars.
           </p>
         </Reveal>
 
