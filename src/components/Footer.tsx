@@ -24,7 +24,7 @@ const LINK_GROUPS = [
 export function Footer() {
   return (
     <footer id="contact" className="relative bg-navy-deep pt-20 pb-8">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="px-6 lg:px-10">
         <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr_0.7fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
