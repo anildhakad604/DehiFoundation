@@ -7,6 +7,7 @@ import { IconChevronLeft, IconChevronRight } from "./icons";
 
 const SLIDES = [
   { src: "/SliderBanner1.png", alt: "Dehi Foundation volunteers and families planting trees together" },
+  { src: "/SliderBanner2.png", alt: "Dehi Foundation families and volunteers united under Nourishing Souls, Enriching Lives" },
   { src: "/SliderBanner5.png", alt: "Dehi Foundation — Empowering Communities, Building a Better Tomorrow" },
 ];
 
