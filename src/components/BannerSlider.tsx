@@ -59,7 +59,7 @@ export function BannerSlider() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative h-[220px] w-full sm:h-[480px] md:h-[560px] lg:h-[640px] xl:h-[700px]">
+      <div className="relative h-[260px] w-full sm:h-[520px] md:h-[600px] lg:h-[680px] xl:h-[740px]">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={index}
