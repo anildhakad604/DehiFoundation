@@ -5,23 +5,12 @@ const LINK_GROUPS = [
   {
     title: "Explore",
     links: [
-      { label: "Our Mission", href: "/#mission" },
-      { label: "Programs", href: "/#programs" },
-      { label: "Impact", href: "/#impact" },
+      { label: "Our Story", href: "/about" },
       { label: "Gallery", href: "/gallery" },
       { label: "Our Team", href: "/team" },
       { label: "Events", href: "/events" },
-      { label: "Stories", href: "/#stories" },
       { label: "FAQ", href: "/faq" },
-    ],
-  },
-  {
-    title: "Get Involved",
-    links: [
-      { label: "Donate", href: "/#donate" },
-      { label: "Volunteer", href: "/#donate" },
-      { label: "Partner With Us", href: "/#donate" },
-      { label: "Contact", href: "/#contact" },
+      { label: "Transparency", href: "/transparency" },
     ],
   },
 ];
@@ -30,7 +19,7 @@ export function Footer() {
   return (
     <footer id="contact" className="relative bg-navy-deep pt-20 pb-8">
       <div className="px-6 lg:px-10">
-        <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr_0.7fr_1fr]">
+        <div className="grid gap-12 lg:grid-cols-[1.3fr_0.7fr_1fr]">
           <div>
             <div className="flex items-center gap-3">
               <span className="relative h-12 w-12 shrink-0 rounded-full overflow-hidden ring-1 ring-gold/40 bg-cream">
@@ -105,6 +94,15 @@ export function Footer() {
             © {new Date().getFullYear()} Dehi Foundation. All rights
             reserved.
           </p>
+          <div className="flex items-center gap-4 text-xs text-cream/50">
+            <Link href="/privacy-policy" className="hover:text-gold-light transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-cream/25">|</span>
+            <Link href="/terms" className="hover:text-gold-light transition-colors">
+              Terms of Service
+            </Link>
+          </div>
           <p className="text-xs italic text-cream/50">
             &ldquo;Nourishing Souls, Enriching Lives.&rdquo;
           </p>

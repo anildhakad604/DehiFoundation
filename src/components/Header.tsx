@@ -5,15 +5,11 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { label: "Our Mission", href: "/#mission" },
-  { label: "Programs", href: "/#programs" },
-  { label: "Impact", href: "/#impact" },
+  { label: "Our Story", href: "/about" },
   { label: "Gallery", href: "/gallery" },
   { label: "Our Team", href: "/team" },
   { label: "Events", href: "/events" },
-  { label: "Stories", href: "/#stories" },
   { label: "FAQ", href: "/faq" },
-  { label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -57,7 +53,7 @@ export function Header() {
           </span>
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-9">
+        <nav className="hidden lg:flex items-center gap-8">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.href}
