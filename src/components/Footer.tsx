@@ -1,22 +1,27 @@
 import Image from "next/image";
+import Link from "next/link";
 
 const LINK_GROUPS = [
   {
     title: "Explore",
     links: [
-      { label: "Our Mission", href: "#mission" },
-      { label: "Programs", href: "#programs" },
-      { label: "Impact", href: "#impact" },
-      { label: "Stories", href: "#stories" },
+      { label: "Our Mission", href: "/#mission" },
+      { label: "Programs", href: "/#programs" },
+      { label: "Impact", href: "/#impact" },
+      { label: "Gallery", href: "/gallery" },
+      { label: "Our Team", href: "/team" },
+      { label: "Events", href: "/events" },
+      { label: "Stories", href: "/#stories" },
+      { label: "FAQ", href: "/faq" },
     ],
   },
   {
     title: "Get Involved",
     links: [
-      { label: "Donate", href: "#donate" },
-      { label: "Volunteer", href: "#donate" },
-      { label: "Partner With Us", href: "#donate" },
-      { label: "Contact", href: "#contact" },
+      { label: "Donate", href: "/#donate" },
+      { label: "Volunteer", href: "/#donate" },
+      { label: "Partner With Us", href: "/#donate" },
+      { label: "Contact", href: "/#contact" },
     ],
   },
 ];
@@ -56,12 +61,12 @@ export function Footer() {
               <ul className="mt-5 space-y-3">
                 {group.links.map((link) => (
                   <li key={link.label}>
-                    <a
+                    <Link
                       href={link.href}
                       className="text-sm text-cream/65 hover:text-gold-light transition-colors"
                     >
                       {link.label}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>

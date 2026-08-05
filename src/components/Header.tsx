@@ -5,11 +5,15 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 
 const NAV_LINKS = [
-  { label: "Our Mission", href: "#mission" },
-  { label: "Programs", href: "#programs" },
-  { label: "Impact", href: "#impact" },
-  { label: "Stories", href: "#stories" },
-  { label: "Contact", href: "#contact" },
+  { label: "Our Mission", href: "/#mission" },
+  { label: "Programs", href: "/#programs" },
+  { label: "Impact", href: "/#impact" },
+  { label: "Gallery", href: "/gallery" },
+  { label: "Our Team", href: "/team" },
+  { label: "Events", href: "/events" },
+  { label: "Stories", href: "/#stories" },
+  { label: "FAQ", href: "/faq" },
+  { label: "Contact", href: "/#contact" },
 ];
 
 export function Header() {
@@ -32,7 +36,7 @@ export function Header() {
       }`}
     >
       <div className="px-6 lg:px-10 flex items-center justify-between h-20">
-        <Link href="#top" className="flex items-center gap-3 group">
+        <Link href="/#top" className="flex items-center gap-3 group">
           <span className="relative h-12 w-12 shrink-0 rounded-full overflow-hidden ring-1 ring-gold/40 bg-cream">
             <Image
               src="/logo.jpg"
@@ -55,23 +59,23 @@ export function Header() {
 
         <nav className="hidden lg:flex items-center gap-9">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="text-sm font-medium tracking-wide text-navy-deep/80 hover:text-gold transition-colors"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
         <div className="hidden lg:block">
-          <a
-            href="#donate"
+          <Link
+            href="/#donate"
             className="inline-flex items-center gap-2 rounded-full bg-forest px-6 py-2.5 text-sm font-semibold text-cream shadow-lg shadow-forest/20 hover:bg-forest-deep transition-colors"
           >
             Donate Now
-          </a>
+          </Link>
         </div>
 
         <button
@@ -100,22 +104,22 @@ export function Header() {
       {open && (
         <div className="lg:hidden bg-cream border-t border-gold/20 px-6 py-6 flex flex-col gap-5">
           {NAV_LINKS.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               onClick={() => setOpen(false)}
               className="text-base font-medium text-navy-deep"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#donate"
+          <Link
+            href="/#donate"
             onClick={() => setOpen(false)}
             className="inline-flex justify-center rounded-full bg-forest px-6 py-3 text-sm font-semibold text-cream"
           >
             Donate Now
-          </a>
+          </Link>
         </div>
       )}
     </header>

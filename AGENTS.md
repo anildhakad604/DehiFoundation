@@ -42,9 +42,13 @@ npm run lint    # Run ESLint CLI directly (next lint is REMOVED in v16)
 ```
 dehi-foundation/
 ├── public/
-│   ├── logo.jpg          # Logo (Footer uses logo.jpg)
+│   ├── logo.jpg               # Logo (Header, Hero, and Footer all use /logo.jpg)
+│   ├── SliderBanner1.png      # Hero slider slide (volunteers planting trees)
+│   ├── SliderBanner2.png      # Hero slider slide (families & volunteers)
+│   ├── SliderBanner3.png      # Hero slider slide (food/education/healthcare/animal welfare)
+│   ├── SliderBanner4.png      # Present in public/ but NOT used by BannerSlider
+│   ├── SliderBanner5.png      # Hero slider slide (empowering communities)
 │   ├── file.svg, globe.svg, next.svg, vercel.svg, window.svg   # create-next-app defaults
-│   └── (NOTE: Header/Hero reference /logo.png — this file does NOT exist in public/)
 ├── src/
 │   ├── app/
 │   │   ├── globals.css   # Tailwind import, CSS variables, @theme inline, global styles
@@ -52,7 +56,8 @@ dehi-foundation/
 │   │   └── page.tsx      # Home page — composes all section components
 │   └── components/
 │       ├── Header.tsx        # Fixed sticky header (client) — scroll-aware, mobile menu
-│       ├── Hero.tsx          # Hero section (client) — framer-motion entrance, stats, logo badge
+│       ├── BannerSlider.tsx  # Hero image slider (client) — autoplay, swipe/drag, arrows, dots
+│       ├── Hero.tsx          # Hero intro section (client) — framer-motion entrance, stats, logo badge
 │       ├── Mission.tsx       # Mission section — 4 pillar cards (server component)
 │       ├── Impact.tsx        # Impact section — dark stats band (server component)
 │       ├── Programs.tsx      # Programs section — alternating row cards (server component)
@@ -77,6 +82,7 @@ dehi-foundation/
 - **Server Components by default.** Most sections (`Mission`, `Impact`, `Programs`, `Testimonials`, `GetInvolved`, `Footer`) are plain server components — they contain no hooks or browser APIs.
 - **Client Components** (`"use client"` directive at top of file):
   - `Header.tsx` — uses `useState`/`useEffect` for scroll state and mobile menu
+  - `BannerSlider.tsx` — uses `useState`/`useEffect`/`useRef`/`useCallback`, `motion` + `AnimatePresence` for slide transitions, drag/swipe gestures
   - `Hero.tsx` — uses `motion` for entrance animations
   - `Reveal.tsx` — uses `motion` for scroll-into-view reveal animations
 - **Named exports only.** Every component is exported as a named function (`export function Header()`, etc.) — never default exports.
@@ -84,7 +90,21 @@ dehi-foundation/
 
 ### Content Data Pattern
 
-Section content is defined as **const arrays/objects at the top of each component file** (e.g., `PILLARS`, `STATS`, `PROGRAMS`, `QUOTES`, `WAYS`, `NAV_LINKS`, `LINK_GROUPS`). To edit copy, change these arrays — no markup changes needed.
+Section content is defined as **const arrays/objects at the top of each component file** (e.g., `SLIDES`, `PILLARS`, `STATS`, `PROGRAMS`, `QUOTES`, `WAYS`, `NAV_LINKS`, `LINK_GROUPS`). To edit copy, change these arrays — no markup changes needed.
+
+### Banner Slider (`BannerSlider.tsx`)
+
+The full-width hero image carousel above the `Hero` intro section. Key behaviors:
+
+- **Slides data:** `SLIDES` const array of `{ src, alt }` pairs pointing to `/SliderBanner1.png`, `/SliderBanner2.png`, `/SliderBanner3.png`, `/SliderBanner5.png` — to add/remove slides, edit this array (dot indicators and arrows render dynamically from it).
+- **Autoplay:** `AUTOPLAY_MS = 6000` interval advances to the next slide; **pauses on hover** (`onMouseEnter`/`onMouseLeave` on the section).
+- **Wrap-around navigation:** `go()` uses modular arithmetic (`(next + SLIDES.length) % SLIDES.length`) so slides wrap infinitely in both directions.
+- **Swipe/drag support:** `drag="x"` with `dragConstraints={{ left: 0, right: 0 }}` and `dragElastic={0.2}`. `SWIPE_THRESHOLD = 60` — dragging beyond ±60px triggers the next/previous slide.
+- **Direction-aware transitions:** `[index, direction]` state tuple drives `variants` (enter/center/exit) with `AnimatePresence custom={direction} mode="wait"` and the shared ease curve `[0.22, 1, 0.36, 1]` (0.6s duration).
+- **Controls:** prev/next chevron buttons (`IconChevronLeft`/`IconChevronRight`), dot indicators with active styling (`w-6 bg-gold` vs `w-2.5 bg-cream/60`), all using `aria-label`s for accessibility.
+- **Overlay copy:** The tagline quote ("A Happy Soul Begins with Good Karma.") and sub-line are hardcoded in the section JSX (not in a data array).
+- **First slide optimization:** `priority={index === 0}` on the `Image`; `sizes="100vw"` with `fill` and `object-cover`.
+- **Anchored:** The section carries `id="top"` — it is the `#top` anchor target.
 
 ### Animation Pattern (`Reveal.tsx`)
 
@@ -100,7 +120,22 @@ Props: `children`, `delay` (seconds, default 0), `className`, `y` (initial Y off
 
 ### Icons (`icons.tsx`)
 
-All icons are hand-written inline SVGs exported as typed React components accepting `React.SVGProps<SVGSVGElement>` (e.g., `IconBowl`, `IconTree`, `IconPaw`, `IconLight`, `IconHands`, `IconDrop`, `IconBird`, `IconHeart`). They use `stroke="currentColor"` — color is controlled by the consumer via Tailwind `text-*` classes. **Do not add an icon library**; follow this pattern.
+All icons are hand-written inline SVGs exported as typed React components accepting `React.SVGProps<SVGSVGElement>`:
+
+| Icon | Used In |
+| ---- | ------- |
+| `IconBowl` | Mission, Impact, Programs (food/deliveries) |
+| `IconTree` | Mission, Impact, Programs (environment) |
+| `IconPaw` | Mission, Impact, Programs (animal welfare) |
+| `IconGraduationCap` | Mission, Impact, Programs (education) |
+| `IconHands` | GetInvolved (Volunteer) |
+| `IconDrop` | GetInvolved (Donate) |
+| `IconBird` | GetInvolved (Partner) |
+| `IconHeart` | Testimonials |
+| `IconChevronLeft` | BannerSlider (previous slide) |
+| `IconChevronRight` | BannerSlider (next slide) |
+
+They use `stroke="currentColor"` — color is controlled by the consumer via Tailwind `text-*` classes. **Do not add an icon library**; follow this pattern.
 
 ---
 
@@ -116,12 +151,12 @@ Color palette is defined in `globals.css` as CSS variables and exposed to Tailwi
 | `cream-deep`   | `#f5efe0` | Alt background (Programs section)  |
 | `forest`       | `#2f5233` | Primary CTA, deep green accents    |
 | `forest-deep`  | `#1e3a22` | Headings on light, CTA hover, dark CTA bg |
-| `gold`         | `#c99a3d` | Accents, dividers, labels, borders |
+| `gold`         | `#c99a3d` | Accents, dividers, labels, borders, active slider dot |
 | `gold-light`   | `#e0b968` | Accents on dark backgrounds        |
 | `brown`        | `#6b4423` | Secondary text, warm accents       |
 | `brown-deep`   | `#4a2e17` | Body text on light, borders        |
 | `navy`         | `#182642` | Dark section accent                |
-| `navy-deep`    | `#0f1a2e` | Dark backgrounds (Impact, Footer), body text |
+| `navy-deep`    | `#0f1a2e` | Dark backgrounds (Impact, Footer, slider overlay gradients), body text |
 | `ember`        | `#e08a3e` | Decorative gradients only          |
 
 Usage: `bg-cream`, `text-navy-deep`, `border-gold/30`, `bg-forest/10`, etc.
@@ -149,7 +184,7 @@ Usage: `bg-cream`, `text-navy-deep`, `border-gold/30`, `bg-forest/10`, etc.
 
 ### Page Structure (`page.tsx`)
 
-Composes, in order: `Header` → `<main className="flex-1">` wrapping `Hero`, `Mission`, `Impact`, `Programs`, `Testimonials`, `GetInvolved` → `Footer`.
+Composes, in order: `Header` → `<main className="flex-1">` wrapping `BannerSlider`, `Hero`, `Mission`, `Impact`, `Programs`, `Testimonials`, `GetInvolved` → `Footer`.
 
 ### Anchor Navigation
 
@@ -157,7 +192,7 @@ The site is a single page with anchored sections linked from the header and foot
 
 | Anchor        | Section                                    |
 | ------------- | ------------------------------------------ |
-| `#top`        | Hero                                       |
+| `#top`        | BannerSlider (hero image slider)           |
 | `#mission`    | Mission (Four Pillars)                     |
 | `#programs`   | Programs (4 program cards)                 |
 | `#impact`     | Impact (stats band)                        |
@@ -199,12 +234,14 @@ This project runs **Next.js 16.2.12**. Key breaking changes vs. older training d
 
 ## Gotchas & Known Issues
 
-- **Logo mismatch:** `src/components/Header.tsx` and `src/components/Hero.tsx` reference `/logo.png`, but `public/` only contains `logo.jpg` (used by `Footer.tsx`). The logo images will 404 in the browser. Fix by either adding `logo.png` to `public/` or updating the `src` references to `/logo.jpg`.
+- **Unused slider asset:** `public/SliderBanner4.png` exists but is **not** referenced by `SLIDES` in `BannerSlider.tsx` (only 1, 2, 3, and 5 are used). Either add it to the slider or remove it.
 - **Newsletter form:** The form in `Footer.tsx` has no `action`/handler — it's purely presentational. Don't expect it to submit anywhere.
 - **CTA links:** Donate/Volunteer/Partner buttons in `GetInvolved.tsx` all link to `#contact` (the footer). Volunteer and Partner links in the footer also point to `#donate`.
+- **`#top` anchor is on `BannerSlider`:** The header logo links to `#top`, which currently targets the slider section (not `Hero`). The `Hero` section itself has no `id`.
 - **No responsive image risks:** All `next/image` usages supply `fill` + `sizes`; keep `sizes` accurate when resizing layouts.
 - **Framer Motion import:** Animations use the `motion` package import `from "framer-motion"` (v12). Do not switch to the `motion/react` package without testing.
 - **Strict TypeScript:** `strict: true` in tsconfig. New data arrays must be fully typed; untyped object literals in props will fail.
+- **Slider drag conflicts with links:** The slider's draggable slide layers sit over the content; buttons/controls inside the slider use `z-10` to stay clickable. If adding new interactive elements inside the slide area, keep them above `z-[5]` (the gradient overlays).
 
 ---
 
@@ -214,6 +251,6 @@ This project runs **Next.js 16.2.12**. Key breaking changes vs. older training d
 2. **Reuse `Reveal`** for any scroll-reveal animation instead of adding new `whileInView` logic.
 3. **Use design tokens** from the `@theme` palette — do not introduce new hex colors inline. If a new color is needed, add a CSS variable + `@theme inline` entry in `globals.css`.
 4. **Icons:** Add new icons as typed SVG components in `icons.tsx` using `stroke="currentColor"`.
-5. **Copy changes:** Edit the data arrays (e.g., `PROGRAMS`, `QUOTES`, `STATS`) rather than hardcoded JSX text.
+5. **Copy changes:** Edit the data arrays (e.g., `SLIDES`, `PROGRAMS`, `QUOTES`, `STATS`) rather than hardcoded JSX text.
 6. **Verify with:** `npm run lint`, `npm run build`, and `npm run dev` before considering a change complete.
 7. **Fractional stats use Indian number-system formatting** (e.g., `1,20,000+` — lakhs grouping) — preserve this style in copy.
