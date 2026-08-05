@@ -8,6 +8,7 @@ import { IconChevronLeft, IconChevronRight } from "./icons";
 const SLIDES = [
   { src: "/SliderBanner1.png", alt: "Dehi Foundation volunteers and families planting trees together" },
   { src: "/SliderBanner2.png", alt: "Dehi Foundation families and volunteers united under Nourishing Souls, Enriching Lives" },
+  { src: "/SliderBanner3.png", alt: "Dehi Foundation — food, education, healthcare and animal welfare programmes" },
   { src: "/SliderBanner5.png", alt: "Dehi Foundation — Empowering Communities, Building a Better Tomorrow" },
 ];
 
@@ -85,6 +86,17 @@ export function BannerSlider() {
             />
           </motion.div>
         </AnimatePresence>
+
+        <div className="pointer-events-none absolute inset-x-0 top-0 z-[5] h-32 bg-gradient-to-b from-navy-deep/70 to-transparent sm:h-44 lg:h-52" />
+        <div className="pointer-events-none absolute inset-x-0 top-5 z-10 px-4 text-center sm:top-8 lg:top-10">
+          <p className="font-serif text-lg font-bold text-cream drop-shadow-md sm:text-2xl lg:text-4xl">
+            &ldquo;A Happy Soul Begins with Good Karma.&rdquo;
+          </p>
+          <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-gold-light sm:mt-3 sm:text-xs lg:text-sm">
+            Feeding the Hungry &bull; Caring for Animals &bull; Protecting
+            Birds &bull; Spreading Compassion
+          </p>
+        </div>
 
         <button
           type="button"
