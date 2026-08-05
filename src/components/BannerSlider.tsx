@@ -92,7 +92,7 @@ export function BannerSlider() {
           <p className="font-serif text-lg font-bold text-cream drop-shadow-md sm:text-2xl lg:text-4xl">
             &ldquo;A Happy Soul Begins with Good Karma.&rdquo;
           </p>
-          <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-gold-light sm:mt-3 sm:text-xs lg:text-sm">
+          <p className="mt-2 text-[10px] font-semibold uppercase tracking-[0.15em] text-cream sm:mt-3 sm:text-xs lg:text-sm">
             Feeding the Hungry &bull; Caring for Animals &bull; Protecting
             Birds &bull; Spreading Compassion
           </p>
