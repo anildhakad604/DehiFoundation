@@ -68,9 +68,11 @@ export function Footer() {
               Stay Connected
             </h4>
             <p className="mt-5 text-sm leading-relaxed text-cream/60">
-              hello@dehifoundation.org
-              <br />
-              +91 98765 43210
+              +91 99531 83562
+            </p>
+            <p className="mt-3 text-sm leading-relaxed text-cream/60">
+              Address: BP 101, opp. The heart clinic, Block BP, Poorvi
+              Pitampura, Pitampura, Delhi, 110034
             </p>
             <form className="mt-6 flex gap-2">
               <input
