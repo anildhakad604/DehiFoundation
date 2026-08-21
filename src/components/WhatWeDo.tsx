@@ -4,6 +4,7 @@ import {
   IconBowl,
   IconGraduationCap,
   IconHands,
+  IconHeart,
   IconPaw,
   IconTree,
 } from "./icons";
@@ -11,73 +12,90 @@ import {
 const PILLARS = [
   {
     icon: IconPaw,
-    tag: "Prani Raksha",
-    title: "Rescuing and healing voiceless lives",
-    desc: "Our rescue teams and veterinary partners treat injured strays, abandoned pets and wounded birds, then nurse them back to health in safe shelters until they can be rehomed or released.",
+    tag: "Prani Raksha · Bird & Animal Welfare",
+    title: "Caring for birds and animals in need",
+    desc: "From feeding drives to summer water bowls, we support the health and wellbeing of birds and animals, and step in for those that are injured or abandoned.",
     activities: [
-      "Round-the-clock rescue response for injured strays and birds",
-      "Veterinary treatment and in-shelter rehabilitation",
-      "Sterilisation and vaccination drives to protect street animals",
-      "Adoption and rehoming support once animals recover",
+      "Food and water for birds",
+      "Water bowls during summer",
+      "Feeding initiatives",
+      "Support for injured/abandoned animals",
+      "Awareness about compassion towards animals",
     ],
     stat: "3,200+ animals & birds rescued",
     gradient: "from-gold to-brown",
   },
   {
     icon: IconBowl,
-    tag: "Anna, Vastra & Awas Seva",
-    title: "Food, clothing and shelter for families in need",
-    desc: "Our kitchens, ration drives and relief camps deliver meals, clothing, blankets and emergency shelter to families who struggle to meet their most basic needs.",
+    tag: "Anna Seva · Support for Needy People",
+    title: "Standing beside families in need",
+    desc: "Food distribution, essential supplies and emergency assistance help economically weaker families meet their most basic needs.",
     activities: [
-      "Weekly community kitchens serving hot, nutritious meals",
-      "Emergency ration kits for families facing hardship",
-      "Clothing and blanket distribution drives each winter",
-      "Free medical camps and basic health check-ups",
+      "Food distribution",
+      "Essential items",
+      "Support to economically weaker families",
+      "Assistance during emergencies",
+      "Community welfare activities",
     ],
     stat: "1,20,000+ meals & essentials delivered",
     gradient: "from-brown to-brown-deep",
   },
   {
-    icon: IconTree,
-    tag: "Prakriti Raksha",
-    title: "Protecting wildlife and the planet we share",
-    desc: "Native tree plantation, habitat restoration and clean-up drives protect the wild spaces that animals, birds and future generations depend on.",
+    icon: IconGraduationCap,
+    tag: "Shiksha Seva · Children & Education",
+    title: "Opening doors to learning for children",
+    desc: "School fees, books and mentoring help children from underprivileged backgrounds stay in school and build a brighter future.",
     activities: [
-      "Native tree plantation drives across degraded land",
-      "Habitat restoration for local wildlife and birds",
-      "Community clean-up campaigns in parks and water bodies",
-      "Environmental awareness workshops in schools",
+      "Educational support for needy children",
+      "Books, stationery and school supplies",
+      "Educational awareness",
+      "Mentoring and guidance",
+    ],
+    stat: "850+ students supported",
+    gradient: "from-navy to-navy-deep",
+  },
+  {
+    icon: IconHeart,
+    tag: "Arogya Seva · Health & Medical Support",
+    title: "Bringing healthcare within reach",
+    desc: "We support needy individuals with medical assistance, run health awareness camps, and work alongside hospitals and medical professionals where possible.",
+    activities: [
+      "Assistance to needy individuals for medical needs",
+      "Health awareness camps",
+      "Basic health-support initiatives",
+      "Collaboration with hospitals/medical professionals where appropriate",
+    ],
+    stat: "40+ health camps conducted",
+    gradient: "from-forest to-navy-deep",
+  },
+  {
+    icon: IconTree,
+    tag: "Prakriti Raksha · Environment",
+    title: "Protecting the planet we share",
+    desc: "Tree plantation, cleanliness drives and water conservation efforts build a cleaner, greener and more responsible community.",
+    activities: [
+      "Tree plantation",
+      "Cleanliness drives",
+      "Water conservation",
+      "Environmental awareness",
+      "Responsible community practices",
     ],
     stat: "8,500+ trees planted",
     gradient: "from-forest to-forest-deep",
   },
   {
     icon: IconHands,
-    tag: "Samaj Seva",
-    title: "Bringing people together for lasting change",
-    desc: "We rally volunteers, donors and neighbourhood groups around shared community initiatives, building a culture of giving, volunteering and participation that outlasts any single drive.",
+    tag: "Samaj Seva · Community Service",
+    title: "Bringing people together for good",
+    desc: "Through volunteering, awareness programmes and disaster support, we bring communities and organisations together for lasting impact.",
     activities: [
-      "Community outreach and awareness drives",
-      "Volunteer recruitment, training and coordination",
-      "Neighbourhood clean-up and welfare camps",
-      "Partnerships with local groups and organisations",
+      "Volunteer activities",
+      "Community awareness programmes",
+      "Support during emergencies/disasters",
+      "Collaboration with other genuine social organizations",
     ],
     stat: "120+ community initiatives led",
     gradient: "from-ember to-brown-deep",
-  },
-  {
-    icon: IconGraduationCap,
-    tag: "Shiksha Seva",
-    title: "Opening classroom doors for underprivileged students",
-    desc: "School fees, books, uniforms and after-school mentoring help talented children from economically weaker families stay in school and pursue the education they deserve.",
-    activities: [
-      "School fee sponsorships for children from weak economic backgrounds",
-      "Books, uniforms and stationery kits every academic year",
-      "After-school mentoring and tuition support",
-      "Merit scholarships for students who excel despite hardship",
-    ],
-    stat: "850+ students supported",
-    gradient: "from-navy to-navy-deep",
   },
 ];
 
@@ -91,13 +109,13 @@ export function WhatWeDo() {
               What We Do
             </span>
             <h1 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-navy-deep">
-              Five pillars, one mission of service
+              Six pillars, one mission of service
             </h1>
             <p className="mt-5 text-base leading-relaxed text-navy-deep/70">
-              Everything we do falls under five seva pillars — animal &amp;
-              bird rescue, food, clothing &amp; shelter, environment,
-              community development, and education. Here is what each looks
-              like on the ground.
+              Everything we do falls under six seva pillars — bird &amp;
+              animal welfare, support for needy people, children &amp;
+              education, health &amp; medical support, environment, and
+              community service. Here is what each looks like on the ground.
             </p>
           </Reveal>
         </div>

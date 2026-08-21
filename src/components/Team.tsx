@@ -41,7 +41,7 @@ export function Team() {
             </span>
             <div className="relative mx-auto mt-6 h-36 w-36 overflow-hidden rounded-full ring-2 ring-gold/40 shadow-lg">
               <Image
-                src="/SHREE HIRA LAL DHINGRA.jpeg"
+                src="/SHREE HIRA LAL DHINGRA.png"
                 alt="Late Shri Hira Lal Dhingra"
                 fill
                 sizes="144px"
@@ -55,7 +55,7 @@ export function Team() {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <div className="mt-10 space-y-5 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-10 space-y-5 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 DEHI FOUNDATION is founded in the loving memory of{" "}
                 <em>
@@ -106,7 +106,7 @@ export function Team() {
             <h2 className="font-serif text-2xl font-bold text-navy-deep">
               A Father Who Gave More Than Wealth
             </h2>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 As a father, he was a constant source of guidance and
                 strength to his sons, <em>Kishore Dhingra and Kunal
@@ -141,7 +141,7 @@ export function Team() {
             <h2 className="font-serif text-2xl font-bold text-navy-deep">
               His Greatest Wealth — Good Wishes
             </h2>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 Late Shri Hira Lal Dhingra believed that a person&apos;s true
                 wealth is not what they leave behind in a bank account, but{" "}
@@ -163,7 +163,7 @@ export function Team() {
             <h2 className="font-serif text-2xl font-bold text-navy-deep">
               Continuing His Legacy
             </h2>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 DEHI FOUNDATION is our humble effort to carry forward the
                 values he lived by.
@@ -242,7 +242,7 @@ export function Team() {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <div className="mt-8 space-y-5 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 CA Kishore Dhingra is a Chartered Accountant and has been in
                 professional practice for more than 15 years.
@@ -283,7 +283,7 @@ export function Team() {
               It is also about what we are able to give back to
               society.&rdquo;
             </blockquote>
-            <p className="mt-4 text-base leading-relaxed text-navy-deep/75">
+            <p className="mt-4 text-base leading-relaxed text-navy-deep/75 text-justify">
               CA Kishore Dhingra believes that the best way to remember his
               father is to continue doing the good work his father believed
               in — helping people, supporting those in need, caring for
@@ -306,7 +306,7 @@ export function Team() {
               <span className="text-gold">→</span>
               <span>Service to Society</span>
             </p>
-            <div className="mt-5 space-y-2 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-5 space-y-2 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>This is the journey behind DEHI FOUNDATION.</p>
               <p>A father&apos;s values became a son&apos;s responsibility.</p>
               <p>A son&apos;s responsibility became a Foundation.</p>
@@ -321,7 +321,7 @@ export function Team() {
             <h3 className="font-serif text-xl font-bold text-navy-deep">
               Our Promise
             </h3>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 We may never be able to repay everything our parents give us.
               </p>
@@ -361,7 +361,7 @@ export function Team() {
           </Reveal>
 
           <Reveal delay={0.05}>
-            <div className="mt-8 space-y-5 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-8 space-y-5 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 <em>
                   CA Kunal Dhingra, the younger son of Late Shri Hira Lal
@@ -394,7 +394,7 @@ export function Team() {
             <h3 className="font-serif text-xl font-bold text-navy-deep">
               Carrying Forward His Father&apos;s Legacy
             </h3>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 For Kunal, DEHI FOUNDATION is not simply a social
                 organization. It is a{" "}
@@ -433,7 +433,7 @@ export function Team() {
             <h3 className="font-serif text-xl font-bold text-navy-deep">
               A Shared Family Mission
             </h3>
-            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75">
+            <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75 text-justify">
               <p>
                 Kunal and his elder brother, <em>CA Kishore Dhingra</em>,
                 share a common purpose — to ensure that their father&apos;s
@@ -445,7 +445,7 @@ export function Team() {
               was the values he gave us. We want those values to continue
               serving society.&rdquo;
             </blockquote>
-            <p className="mt-4 text-base leading-relaxed text-navy-deep/75">
+            <p className="mt-4 text-base leading-relaxed text-navy-deep/75 text-justify">
               For Kunal, every initiative undertaken through DEHI FOUNDATION
               is a small step towards keeping his father&apos;s memory
               alive.
@@ -481,7 +481,7 @@ export function Team() {
             </p>
           </Reveal>
 
-          <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mx-auto mt-16 grid max-w-3xl gap-6 sm:grid-cols-2">
             {TEAM_MEMBERS.map((member, i) => (
               <Reveal key={member.role} delay={i * 0.08}>
                 <div className="flex h-full flex-col items-center rounded-2xl border border-brown/10 bg-white/70 p-8 text-center shadow-sm transition-shadow hover:shadow-xl hover:shadow-brown/10">

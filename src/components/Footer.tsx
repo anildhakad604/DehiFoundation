@@ -9,9 +9,6 @@ const LINK_GROUPS = [
       { label: "What We Do", href: "/what-we-do" },
       { label: "Gallery", href: "/gallery" },
       { label: "Our Team", href: "/team" },
-      { label: "Events", href: "/events" },
-      { label: "FAQ", href: "/faq" },
-      
     ],
   },
 ];

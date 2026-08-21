@@ -64,21 +64,16 @@ export function IconPaw(props: React.SVGProps<SVGSVGElement>) {
 export function IconHands(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 48 48" fill="none" {...props}>
+      <circle cx="31" cy="15" r="5" stroke="currentColor" strokeWidth="2" />
       <path
-        d="M6 28c6-2 10-6 12-10M42 28c-6-2-10-6-12-10"
+        d="M21 39c0-7.2 4.5-13 10-13s10 5.8 10 13"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
       />
+      <circle cx="17" cy="18" r="6" stroke="currentColor" strokeWidth="2" />
       <path
-        d="M6 28c2 8 9 13 18 13s16-5 18-13"
-        stroke="currentColor"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-      />
-      <path
-        d="M24 18v16"
+        d="M5 40c0-8.3 5.4-15 12-15s12 6.7 12 15"
         stroke="currentColor"
         strokeWidth="2"
         strokeLinecap="round"
@@ -104,9 +99,24 @@ export function IconBird(props: React.SVGProps<SVGSVGElement>) {
   return (
     <svg viewBox="0 0 48 48" fill="none" {...props}>
       <path
-        d="M4 24c6-6 12-4 15 0 3-4 9-6 15 0 3-3 7-4 10-3-4 1-7 3-9 6-2-1-4-1-6 0-3-4-8-5-12-3-3-2-8-1-13 0Z"
+        d="M4 30c8-14 16-14 20-4 4-10 12-10 20 4"
         stroke="currentColor"
-        strokeWidth="2"
+        strokeWidth="2.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function IconCheck(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 48 48" fill="none" {...props}>
+      <path
+        d="M12 25l8 8 16-18"
+        stroke="currentColor"
+        strokeWidth="3"
+        strokeLinecap="round"
         strokeLinejoin="round"
       />
     </svg>

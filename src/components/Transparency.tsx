@@ -1,6 +1,19 @@
 import { Reveal } from "./Reveal";
 import { IconBowl, IconGraduationCap, IconPaw, IconTree } from "./icons";
 
+const REGISTRATIONS = [
+  { label: "Indian Trusts Act 1882", value: "Reg. No. 19917741111" },
+  { label: "PAN", value: "AADTT5141Q" },
+  { label: "80G", value: "AADTT5141QF20210" },
+  { label: "12A", value: "AADTT5141QE20212" },
+  { label: "Darpan ID", value: "DEL/2019/0243325" },
+  {
+    label: "Animal Welfare Board of India, GoI",
+    value: "Recognition Code No. ND062/2023",
+  },
+  { label: "FCRA Registration", value: "No. 231662051" },
+];
+
 const ALLOCATION = [
   { icon: IconBowl, label: "Food, Clothing & Shelter", percent: 35, color: "bg-brown" },
   { icon: IconGraduationCap, label: "Education (Shiksha Seva)", percent: 25, color: "bg-navy" },
@@ -89,6 +102,29 @@ export function Transparency() {
           >
             Request a Copy
           </a>
+        </Reveal>
+
+        <Reveal delay={0.15} className="mt-16">
+          <h2 className="font-serif text-2xl font-bold text-navy-deep">
+            Legal &amp; Registration
+          </h2>
+          <div className="mt-8 divide-y divide-brown/10 rounded-2xl border border-brown/10 bg-white/70">
+            {REGISTRATIONS.map((reg) => (
+              <div
+                key={reg.label}
+                className="flex flex-col gap-1 px-6 py-4 sm:flex-row sm:items-center sm:justify-between sm:gap-4"
+              >
+                <span className="text-sm font-medium text-navy-deep">
+                  {reg.label}
+                </span>
+                <span className="text-sm font-semibold text-navy-deep/70">
+                  {reg.value}
+                </span>
+              </div>
+            ))}
+          </div>
+
+         
         </Reveal>
       </div>
     </section>

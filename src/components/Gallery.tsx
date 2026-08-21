@@ -7,7 +7,7 @@ const GALLERY_ITEMS = [
     alt: "Volunteers planting saplings during a tree plantation drive",
     caption: "Green Earth Drive — native tree plantation",
     tag: "Environment",
-    span: "lg:col-span-2 lg:row-span-2",
+    span: "lg:col-span-2",
   },
   {
     src: "/SliderBanner2.png",
@@ -35,7 +35,7 @@ const GALLERY_ITEMS = [
     alt: "Community members empowered through Dehi Foundation programmes",
     caption: "Empowering communities together",
     tag: "Community",
-    span: "",
+    span: "lg:col-span-2",
   },
 ];
 
