@@ -4,7 +4,7 @@ const FAQ_ITEMS = [
   {
     question: "How is my donation used?",
     answer:
-      "Every donation funds our four pillars directly — meals and ration kits, school fees and books, veterinary care for rescued animals, and native tree plantation. We publish programme-wise spending in our annual report.",
+      "Every donation funds our five key areas of work directly — meals and ration kits, school fees and books, veterinary care for rescued animals, native tree plantation, and community welfare initiatives. We publish programme-wise spending in our annual report.",
   },
   {
     question: "Is my donation tax-deductible?",

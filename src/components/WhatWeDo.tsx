@@ -1,36 +1,14 @@
 import Link from "next/link";
 import { Reveal } from "./Reveal";
-import { IconBowl, IconGraduationCap, IconPaw, IconTree } from "./icons";
+import {
+  IconBowl,
+  IconGraduationCap,
+  IconHands,
+  IconPaw,
+  IconTree,
+} from "./icons";
 
 const PILLARS = [
-  {
-    icon: IconBowl,
-    tag: "Anna, Vastra & Awas Seva",
-    title: "Food, clothing and shelter for families in need",
-    desc: "Our kitchens, ration drives and relief camps deliver meals, clothing, blankets and emergency shelter to families who struggle to meet their most basic needs.",
-    activities: [
-      "Weekly community kitchens serving hot, nutritious meals",
-      "Emergency ration kits for families facing hardship",
-      "Clothing and blanket distribution drives each winter",
-      "Free medical camps and basic health check-ups",
-    ],
-    stat: "1,20,000+ meals & essentials delivered",
-    gradient: "from-brown to-brown-deep",
-  },
-  {
-    icon: IconGraduationCap,
-    tag: "Shiksha Seva",
-    title: "Opening classroom doors for underprivileged students",
-    desc: "School fees, books, uniforms and after-school mentoring help talented children from economically weaker families stay in school and pursue the education they deserve.",
-    activities: [
-      "School fee sponsorships for children from weak economic backgrounds",
-      "Books, uniforms and stationery kits every academic year",
-      "After-school mentoring and tuition support",
-      "Merit scholarships for students who excel despite hardship",
-    ],
-    stat: "850+ students supported",
-    gradient: "from-navy to-navy-deep",
-  },
   {
     icon: IconPaw,
     tag: "Prani Raksha",
@@ -46,6 +24,20 @@ const PILLARS = [
     gradient: "from-gold to-brown",
   },
   {
+    icon: IconBowl,
+    tag: "Anna, Vastra & Awas Seva",
+    title: "Food, clothing and shelter for families in need",
+    desc: "Our kitchens, ration drives and relief camps deliver meals, clothing, blankets and emergency shelter to families who struggle to meet their most basic needs.",
+    activities: [
+      "Weekly community kitchens serving hot, nutritious meals",
+      "Emergency ration kits for families facing hardship",
+      "Clothing and blanket distribution drives each winter",
+      "Free medical camps and basic health check-ups",
+    ],
+    stat: "1,20,000+ meals & essentials delivered",
+    gradient: "from-brown to-brown-deep",
+  },
+  {
     icon: IconTree,
     tag: "Prakriti Raksha",
     title: "Protecting wildlife and the planet we share",
@@ -59,6 +51,34 @@ const PILLARS = [
     stat: "8,500+ trees planted",
     gradient: "from-forest to-forest-deep",
   },
+  {
+    icon: IconHands,
+    tag: "Samaj Seva",
+    title: "Bringing people together for lasting change",
+    desc: "We rally volunteers, donors and neighbourhood groups around shared community initiatives, building a culture of giving, volunteering and participation that outlasts any single drive.",
+    activities: [
+      "Community outreach and awareness drives",
+      "Volunteer recruitment, training and coordination",
+      "Neighbourhood clean-up and welfare camps",
+      "Partnerships with local groups and organisations",
+    ],
+    stat: "120+ community initiatives led",
+    gradient: "from-ember to-brown-deep",
+  },
+  {
+    icon: IconGraduationCap,
+    tag: "Shiksha Seva",
+    title: "Opening classroom doors for underprivileged students",
+    desc: "School fees, books, uniforms and after-school mentoring help talented children from economically weaker families stay in school and pursue the education they deserve.",
+    activities: [
+      "School fee sponsorships for children from weak economic backgrounds",
+      "Books, uniforms and stationery kits every academic year",
+      "After-school mentoring and tuition support",
+      "Merit scholarships for students who excel despite hardship",
+    ],
+    stat: "850+ students supported",
+    gradient: "from-navy to-navy-deep",
+  },
 ];
 
 export function WhatWeDo() {
@@ -71,12 +91,13 @@ export function WhatWeDo() {
               What We Do
             </span>
             <h1 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-navy-deep">
-              Four pillars, one mission of service
+              Five pillars, one mission of service
             </h1>
             <p className="mt-5 text-base leading-relaxed text-navy-deep/70">
-              Everything we do falls under four seva pillars — food, clothing
-              &amp; shelter, education, animal &amp; bird rescue, and the
-              environment. Here is what each looks like on the ground.
+              Everything we do falls under five seva pillars — animal &amp;
+              bird rescue, food, clothing &amp; shelter, environment,
+              community development, and education. Here is what each looks
+              like on the ground.
             </p>
           </Reveal>
         </div>

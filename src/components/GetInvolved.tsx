@@ -1,6 +1,15 @@
 import { Reveal } from "./Reveal";
 import { IconDrop, IconHands, IconBird } from "./icons";
 
+const JOIN_WAYS = [
+  "Volunteering your time and skills.",
+  "Supporting our welfare initiatives.",
+  "Contributing towards food and water programs for birds and animals.",
+  "Supporting needy individuals and families.",
+  "Helping spread awareness about our initiatives.",
+  "Collaborating with us on community welfare projects.",
+];
+
 const WAYS = [
   {
     icon: IconDrop,
@@ -39,6 +48,7 @@ export function GetInvolved() {
             Your hands can carry this forward
           </h2>
           <p className="mt-4 text-base leading-relaxed text-cream/70">
+            Social change becomes stronger when people come together.
             Whichever way you choose to give, you help a family eat, a child
             learn, or an animal heal — you become part of the circle of hands
             that holds our work together.
@@ -68,6 +78,29 @@ export function GetInvolved() {
             </Reveal>
           ))}
         </div>
+
+        <Reveal delay={0.25} className="mx-auto mt-14 max-w-xl">
+          <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-gold-light">
+            You can support DEHI FOUNDATION by
+          </p>
+          <ul className="mt-6 space-y-3">
+            {JOIN_WAYS.map((way) => (
+              <li
+                key={way}
+                className="flex gap-3 text-sm leading-relaxed text-cream/75"
+              >
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                {way}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal delay={0.3}>
+          <p className="mt-14 text-center font-serif text-xl font-semibold text-cream">
+            Together, We Can Make a Difference.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

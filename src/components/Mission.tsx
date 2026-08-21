@@ -1,26 +1,37 @@
 import { Reveal } from "./Reveal";
-import { IconBowl, IconGraduationCap, IconPaw, IconTree } from "./icons";
+import {
+  IconBowl,
+  IconGraduationCap,
+  IconHands,
+  IconPaw,
+  IconTree,
+} from "./icons";
 
 const PILLARS = [
   {
-    icon: IconBowl,
-    title: "Feed, Clothe & Shelter",
-    desc: "Warm meals, clothing, safe shelter and medical care reach families who have nowhere else to turn — because dignity should never depend on income.",
-  },
-  {
-    icon: IconGraduationCap,
-    title: "Educate the Underprivileged",
-    desc: "School fees, books and mentoring help bright children from economically weak families stay in school and dream bigger.",
-  },
-  {
     icon: IconPaw,
-    title: "Rescue Every Creature",
-    desc: "Injured, abandoned and voiceless animals and birds are rescued, treated and rehomed with the same compassion we'd want for our own.",
+    title: "Bird & Animal Welfare",
+    desc: "We promote care and compassion towards birds and animals through providing food and drinking water, supporting animal welfare activities, and creating awareness about responsible treatment of animals.",
+  },
+  {
+    icon: IconBowl,
+    title: "Support for the Needy",
+    desc: "We assist people facing financial or social difficulties by supporting initiatives related to food, essential requirements, education, healthcare and other basic needs.",
   },
   {
     icon: IconTree,
-    title: "Protect Nature & Wildlife",
-    desc: "Tree plantation, habitat protection and clean-up drives safeguard the wild spaces that animals and future generations depend on.",
+    title: "Environment & Sustainability",
+    desc: "We encourage environmentally responsible practices and community participation in activities that contribute towards a cleaner, greener and healthier environment.",
+  },
+  {
+    icon: IconHands,
+    title: "Community Development",
+    desc: "We work towards bringing people together for meaningful social initiatives and encouraging a culture of volunteering, giving and community participation.",
+  },
+  {
+    icon: IconGraduationCap,
+    title: "Education & Awareness",
+    desc: "We support awareness initiatives that encourage education, responsible citizenship, compassion, environmental consciousness and social responsibility.",
   },
 ];
 
@@ -40,11 +51,11 @@ export function Mission() {
             We believe true service tends to both the vulnerable among us and
             the voiceless around us — underprivileged families, eager
             students, and animals and birds with no one else to turn to.
-            Every programme we run rests on four pillars.
+            Every programme we run rests on five key areas of work.
           </p>
         </Reveal>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-5">
           {PILLARS.map((pillar, i) => (
             <Reveal key={pillar.title} delay={i * 0.1}>
               <div className="group h-full rounded-2xl border border-brown/10 bg-white/60 p-8 shadow-sm transition-all hover:-translate-y-1.5 hover:shadow-xl hover:shadow-gold/10 hover:border-gold/30">

@@ -25,12 +25,27 @@ export function Hero() {
             <span className="text-forest-deep">Enriching Lives.</span>
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-navy-deep/75">
-            Dehi Foundation stands beside underprivileged families, eager
-            young students, and the voiceless animals and birds who need us
-            most — providing food, shelter, education and medical care, one
-            act of compassion at a time.
+          <p className="mt-3 font-serif text-xl italic text-gold">
+            Compassion in Action. Service with Purpose.
           </p>
+
+          <div className="mt-6 max-w-xl space-y-4 text-lg leading-relaxed text-navy-deep/75">
+            <p>
+              Dehi Foundation is a social welfare organization committed to
+              creating a more compassionate, responsible, and inclusive
+              society. Our mission is to support people in need, care for
+              birds and animals, promote environmental responsibility, and
+              contribute to the overall well-being of communities.
+            </p>
+            <p>
+              We believe that meaningful social change begins with small
+              acts of kindness and grows through consistent, organized
+              efforts. Through community initiatives, awareness programs,
+              charitable activities, and direct support, we aim to make a
+              positive and sustainable difference in the lives of people,
+              animals, and the environment.
+            </p>
+          </div>
 
           <div className="mt-10 flex flex-wrap items-center gap-4">
             <a

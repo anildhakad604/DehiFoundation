@@ -4,9 +4,9 @@ import { Team } from "@/components/Team";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Our Team | Dehi Foundation",
+  title: "Founder's Message & Our Team | Dehi Foundation",
   description:
-    "Meet the trustees, advisors and coordinators guiding Dehi Foundation's food, education, animal welfare and environment programmes.",
+    "In loving memory of Late Shri Hira Lal Dhingra, and the trustees, advisors and coordinators carrying his legacy forward through Dehi Foundation's work.",
 };
 
 export default function TeamPage() {

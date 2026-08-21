@@ -11,7 +11,7 @@ const LINK_GROUPS = [
       { label: "Our Team", href: "/team" },
       { label: "Events", href: "/events" },
       { label: "FAQ", href: "/faq" },
-      { label: "Transparency", href: "/transparency" },
+      
     ],
   },
 ];
@@ -92,7 +92,22 @@ export function Footer() {
 
         <div className="gold-divider mt-16" />
 
-        <div className="flex flex-col items-center justify-between gap-4 pt-8 sm:flex-row">
+        <div className="space-y-1.5 pt-8 text-center text-xs text-cream/50">
+          <p>
+            Registered under the Indian Trusts Act 1882, Reg. No. 19917741111
+          </p>
+          <p>
+            PAN: AADTT5141Q | 80G: AADTT5141QF20210 | 12A: AADTT5141QE20212 |
+            Darpan ID: DEL/2019/0243325
+          </p>
+          <p>
+            Recognised by the Animal Welfare Board of India, GoI, Recognition
+            Code No.: ND062/2023
+          </p>
+          <p>FCRA Registration No.: 231662051</p>
+        </div>
+
+        <div className="mt-8 flex flex-col items-center justify-between gap-4 pt-8 border-t border-cream/10 sm:flex-row">
           <p className="text-xs text-cream/50">
             © {new Date().getFullYear()} Dehi Foundation. All rights
             reserved.
@@ -103,7 +118,7 @@ export function Footer() {
             </Link>
             <span className="text-cream/25">|</span>
             <Link href="/terms" className="hover:text-gold-light transition-colors">
-              Terms of Service
+              Terms of Use
             </Link>
           </div>
           <p className="text-xs italic text-cream/50">

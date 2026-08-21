@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Our Story | Dehi Foundation",
   description:
-    "How Dehi Foundation grew from a single weekly community kitchen into four pillars of service — food, education, animal welfare and environment.",
+    "How Dehi Foundation grew from a single weekly community kitchen into five key areas of service — food, education, animal welfare, environment and community development.",
 };
 
 export default function AboutPage() {

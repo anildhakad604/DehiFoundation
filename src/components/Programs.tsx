@@ -1,23 +1,13 @@
 import { Reveal } from "./Reveal";
-import { IconBowl, IconGraduationCap, IconPaw, IconTree } from "./icons";
+import {
+  IconBowl,
+  IconGraduationCap,
+  IconHands,
+  IconPaw,
+  IconTree,
+} from "./icons";
 
 const PROGRAMS = [
-  {
-    icon: IconBowl,
-    tag: "Anna, Vastra & Awas Seva",
-    title: "Food, clothing and shelter for families in need",
-    desc: "Our kitchens, ration drives and relief camps deliver meals, clothing, blankets and emergency shelter to families who struggle to meet their most basic needs — with free medical camps for those who cannot afford care.",
-    stat: "1,20,000+ meals & essentials delivered",
-    gradient: "from-brown to-brown-deep",
-  },
-  {
-    icon: IconGraduationCap,
-    tag: "Shiksha Seva · Education Support",
-    title: "Opening classroom doors for underprivileged students",
-    desc: "School fees, books, uniforms and after-school mentoring help talented children from economically weaker families stay in school and pursue the education they deserve.",
-    stat: "850+ students supported",
-    gradient: "from-navy to-navy-deep",
-  },
   {
     icon: IconPaw,
     tag: "Prani Raksha · Animal & Bird Rescue",
@@ -27,12 +17,36 @@ const PROGRAMS = [
     gradient: "from-gold to-brown",
   },
   {
+    icon: IconBowl,
+    tag: "Anna, Vastra & Awas Seva",
+    title: "Food, clothing and shelter for families in need",
+    desc: "Our kitchens, ration drives and relief camps deliver meals, clothing, blankets and emergency shelter to families who struggle to meet their most basic needs — with free medical camps for those who cannot afford care.",
+    stat: "1,20,000+ meals & essentials delivered",
+    gradient: "from-brown to-brown-deep",
+  },
+  {
     icon: IconTree,
     tag: "Prakriti Raksha · Wildlife & Environment",
     title: "Protecting wildlife and the planet we share",
     desc: "Native tree plantation, habitat restoration and clean-up drives protect the wild spaces that animals, birds and future generations depend on.",
     stat: "8,500+ trees planted",
     gradient: "from-forest to-forest-deep",
+  },
+  {
+    icon: IconHands,
+    tag: "Samaj Seva · Community Development",
+    title: "Bringing people together for lasting change",
+    desc: "We rally volunteers, donors and neighbourhood groups around shared community initiatives, building a culture of giving, volunteering and participation that outlasts any single drive.",
+    stat: "120+ community initiatives led",
+    gradient: "from-ember to-brown-deep",
+  },
+  {
+    icon: IconGraduationCap,
+    tag: "Shiksha Seva · Education Support",
+    title: "Opening classroom doors for underprivileged students",
+    desc: "School fees, books, uniforms and after-school mentoring help talented children from economically weaker families stay in school and pursue the education they deserve.",
+    stat: "850+ students supported",
+    gradient: "from-navy to-navy-deep",
   },
 ];
 
@@ -45,7 +59,7 @@ export function Programs() {
             Our Programs
           </span>
           <h2 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-navy-deep">
-            Four ways we serve, every single day
+            Five ways we serve, every single day
           </h2>
         </Reveal>
 

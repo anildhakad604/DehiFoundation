@@ -1,35 +1,40 @@
 import { Reveal } from "./Reveal";
 
-const MILESTONES = [
+const MISSION_POINTS = [
+  "Support underprivileged, needy, and vulnerable individuals.",
+  "Provide food, water, and care for birds and animals.",
+  "Promote kindness and compassion towards animals and nature.",
+  "Undertake community welfare and charitable initiatives.",
+  "Promote awareness about environmental responsibility.",
+  "Encourage individuals and communities to participate in social service.",
+  "Support initiatives that contribute to education, health, livelihood, and social well-being.",
+  "Develop sustainable programs that create long-term community impact.",
+];
+
+const VALUES = [
   {
-    year: "2018",
-    title: "A single weekly kitchen",
-    desc: "Dehi Foundation began in Barabanki, Uttar Pradesh, with one weekly community kitchen serving 40 families.",
+    title: "Compassion",
+    desc: "We believe every act of kindness has the potential to create positive change.",
   },
   {
-    year: "2019",
-    title: "Shiksha Seva begins",
-    desc: "Our first scholarship cohort — 25 students — received school fees, books and mentoring to stay in school.",
+    title: "Dignity",
+    desc: "We respect every person and every living being we serve.",
   },
   {
-    year: "2020",
-    title: "Prani Raksha launches",
-    desc: "We opened our first shelter and began rescuing injured strays, abandoned pets and wounded birds.",
+    title: "Integrity",
+    desc: "We strive to maintain honesty, accountability, and transparency in our activities.",
   },
   {
-    year: "2021",
-    title: "Green Earth Drive takes root",
-    desc: "Volunteers planted our first 1,000 native saplings, starting what has grown into an ongoing restoration effort.",
+    title: "Service",
+    desc: "We are committed to serving society without discrimination.",
   },
   {
-    year: "2023",
-    title: "A six-figure milestone",
-    desc: "We crossed 1,00,000 meals and essentials delivered to families across the region.",
+    title: "Responsibility",
+    desc: "We believe social welfare is a shared responsibility.",
   },
   {
-    year: "2026",
-    title: "Four pillars, one mission",
-    desc: "Today, our food, education, animal welfare and environment programmes serve thousands of families, students and animals every year.",
+    title: "Sustainability",
+    desc: "We aim to create initiatives that generate meaningful and lasting impact.",
   },
 ];
 
@@ -39,63 +44,111 @@ export function About() {
       <div className="mx-auto max-w-3xl px-6 lg:px-10">
         <Reveal className="text-center">
           <span className="text-xs font-semibold uppercase tracking-[0.25em] text-gold">
-            Our Story
+            About Us
           </span>
           <h1 className="mt-4 font-serif text-3xl sm:text-4xl font-bold text-navy-deep">
-            From one meal to a movement
+            Compassion, Dignity and Responsibility
           </h1>
         </Reveal>
 
         <Reveal delay={0.05}>
           <div className="mt-10 space-y-5 text-base leading-relaxed text-navy-deep/75">
             <p>
-              Dehi Foundation was born from a simple observation: in the same
-              neighbourhoods where children went to bed hungry, stray animals
-              went unfed and unwell, and talented students dropped out for
-              want of a few thousand rupees in fees. We started with what we
-              could do that week — cook, serve, and show up again the next
-              week.
+              DEHI FOUNDATION was established with a simple vision —{" "}
+              <em>
+                to serve society with compassion, dignity, and
+                responsibility.
+              </em>
             </p>
             <p>
-              That single act of service grew into four pillars —
-              food, education, animal welfare and the environment — because
-              we came to believe that <em>dehi</em>, the soul within, deserves
-              care whether it belongs to a person, a child with a dream, or a
-              creature with no one to speak for it.
+              Our work focuses on areas where small interventions can create
+              meaningful impact. From providing food and water to birds and
+              animals to supporting underprivileged and needy individuals, we
+              work to build a culture of care and social responsibility.
             </p>
             <p>
-              Every meal served, every scholarship granted, every animal
-              rescued and every tree planted since has been possible because
-              volunteers, donors and partners kept choosing to show up — the
-              same way we did on that first day.
+              We believe that every individual, regardless of their
+              circumstances, deserves dignity, compassion, and an
+              opportunity to live a better life.
+            </p>
+            <p>
+              Our approach is based on{" "}
+              <em>service, transparency, participation, and sustainability</em>.
+              We seek to work with volunteers, donors, professionals,
+              organizations, and members of the community who share our
+              commitment to creating positive change.
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={0.1} className="mt-16">
           <h2 className="font-serif text-2xl font-bold text-navy-deep">
-            Our Journey
+            Our Vision
           </h2>
+          <p className="mt-4 text-base leading-relaxed text-navy-deep/75">
+            To build a compassionate and responsible society where{" "}
+            <em>
+              people, animals, and the environment are treated with care,
+              dignity, and respect.
+            </em>
+          </p>
         </Reveal>
 
-        <div className="mt-8 space-y-8 border-l-2 border-gold/25 pl-8">
-          {MILESTONES.map((milestone, i) => (
-            <Reveal key={milestone.year} delay={0.05 + i * 0.06}>
-              <div className="relative">
-                <span className="absolute -left-[38px] top-1 h-3 w-3 rounded-full bg-gold ring-4 ring-cream" />
-                <span className="text-xs font-semibold uppercase tracking-[0.15em] text-gold">
-                  {milestone.year}
-                </span>
-                <h3 className="mt-1 font-serif text-lg font-semibold text-navy-deep">
-                  {milestone.title}
+        <Reveal delay={0.1} className="mt-16">
+          <h2 className="font-serif text-2xl font-bold text-navy-deep">
+            Our Mission
+          </h2>
+          <ul className="mt-5 space-y-3">
+            {MISSION_POINTS.map((point) => (
+              <li
+                key={point}
+                className="flex gap-3 text-sm leading-relaxed text-navy-deep/75"
+              >
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
+                {point}
+              </li>
+            ))}
+          </ul>
+        </Reveal>
+
+        <Reveal delay={0.1} className="mt-16">
+          <h2 className="font-serif text-2xl font-bold text-navy-deep">
+            Our Values
+          </h2>
+          <div className="mt-6 grid gap-6 sm:grid-cols-2">
+            {VALUES.map((value) => (
+              <div key={value.title}>
+                <h3 className="font-serif text-lg font-semibold text-forest-deep">
+                  {value.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-navy-deep/70">
-                  {milestone.desc}
+                <p className="mt-1.5 text-sm leading-relaxed text-navy-deep/70">
+                  {value.desc}
                 </p>
               </div>
-            </Reveal>
-          ))}
-        </div>
+            ))}
+          </div>
+        </Reveal>
+
+        <Reveal delay={0.1} className="mt-16">
+          <h2 className="font-serif text-2xl font-bold text-navy-deep">
+            Our Approach
+          </h2>
+          <div className="mt-4 space-y-4 text-base leading-relaxed text-navy-deep/75">
+            <p>
+              DEHI FOUNDATION believes that charity is not only about giving;
+              it is about{" "}
+              <em>
+                creating dignity, opportunity, awareness, and lasting
+                positive change.
+              </em>
+            </p>
+            <p>
+              We therefore focus on responsible implementation of social
+              initiatives, community participation, volunteer involvement,
+              and transparent utilization of resources.
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -6,7 +6,7 @@ import { Footer } from "@/components/Footer";
 export const metadata: Metadata = {
   title: "What We Do | Dehi Foundation",
   description:
-    "A closer look at Dehi Foundation's four seva pillars — food, clothing & shelter, education, animal & bird rescue, and environment.",
+    "A closer look at Dehi Foundation's five seva pillars — animal & bird rescue, food, clothing & shelter, environment, community development, and education.",
 };
 
 export default function WhatWeDoPage() {
