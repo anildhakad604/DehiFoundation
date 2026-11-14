@@ -43,11 +43,9 @@ npm run lint    # Run ESLint CLI directly (next lint is REMOVED in v16)
 dehi-foundation/
 ├── public/
 │   ├── logo.jpg               # Logo (Header, Hero, and Footer all use /logo.jpg)
-│   ├── SliderBanner1.png      # Hero slider slide (volunteers planting trees)
-│   ├── SliderBanner2.png      # Hero slider slide (families & volunteers)
-│   ├── SliderBanner3.png      # Hero slider slide (food/education/healthcare/animal welfare)
-│   ├── SliderBanner4.png      # Present in public/ but NOT used by BannerSlider
-│   ├── SliderBanner5.png      # Hero slider slide (empowering communities)
+│   ├── images/                # Real photographs (Unsplash License) — NO AI-generated images (client requirement)
+│   │   ├── slide-*.jpg        # BannerSlider slides (annadaan, animal-seva, birds, green-earth, community)
+│   │   └── gallery-*.jpg      # Gallery page tiles (Gallery also reuses slide-annadaan.jpg and slide-birds.jpg)
 │   ├── file.svg, globe.svg, next.svg, vercel.svg, window.svg   # create-next-app defaults
 ├── src/
 │   ├── app/
@@ -96,7 +94,7 @@ Section content is defined as **const arrays/objects at the top of each componen
 
 The full-width hero image carousel above the `Hero` intro section. Key behaviors:
 
-- **Slides data:** `SLIDES` const array of `{ src, alt }` pairs pointing to `/SliderBanner1.png`, `/SliderBanner2.png`, `/SliderBanner3.png`, `/SliderBanner5.png` — to add/remove slides, edit this array (dot indicators and arrows render dynamically from it).
+- **Slides data:** `SLIDES` const array of `{ src, alt }` pairs pointing to `/images/slide-annadaan.jpg`, `/images/slide-animal-seva.jpg`, `/images/slide-birds.jpg`, `/images/slide-green-earth.jpg`, `/images/slide-community.jpg` — to add/remove slides, edit this array (dot indicators and arrows render dynamically from it).
 - **Autoplay:** `AUTOPLAY_MS = 6000` interval advances to the next slide; **pauses on hover** (`onMouseEnter`/`onMouseLeave` on the section).
 - **Wrap-around navigation:** `go()` uses modular arithmetic (`(next + SLIDES.length) % SLIDES.length`) so slides wrap infinitely in both directions.
 - **Swipe/drag support:** `drag="x"` with `dragConstraints={{ left: 0, right: 0 }}` and `dragElastic={0.2}`. `SWIPE_THRESHOLD = 60` — dragging beyond ±60px triggers the next/previous slide.
@@ -234,7 +232,7 @@ This project runs **Next.js 16.2.12**. Key breaking changes vs. older training d
 
 ## Gotchas & Known Issues
 
-- **Unused slider asset:** `public/SliderBanner4.png` exists but is **not** referenced by `SLIDES` in `BannerSlider.tsx` (only 1, 2, 3, and 5 are used). Either add it to the slider or remove it.
+- **No AI images:** The client explicitly rejected AI-generated images. Use only real photographs — ideally the foundation's own event photos, otherwise freely licensed real photos (e.g. Unsplash). Never Google Images results, which are usually copyrighted.
 - **Newsletter form:** The form in `Footer.tsx` has no `action`/handler — it's purely presentational. Don't expect it to submit anywhere.
 - **CTA links:** Donate/Volunteer/Partner buttons in `GetInvolved.tsx` all link to `#contact` (the footer). Volunteer and Partner links in the footer also point to `#donate`.
 - **`#top` anchor is on `BannerSlider`:** The header logo links to `#top`, which currently targets the slider section (not `Hero`). The `Hero` section itself has no `id`.

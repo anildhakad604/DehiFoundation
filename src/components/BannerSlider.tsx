@@ -6,10 +6,11 @@ import { AnimatePresence, motion, type PanInfo } from "framer-motion";
 import { IconChevronLeft, IconChevronRight } from "./icons";
 
 const SLIDES = [
-  { src: "/SliderBanner1.png", alt: "Dehi Foundation volunteers and families planting trees together" },
-  { src: "/SliderBanner2.png", alt: "Dehi Foundation families and volunteers united under Nourishing Souls, Enriching Lives" },
-  { src: "/SliderBanner3.png", alt: "Dehi Foundation — food, education, healthcare and animal welfare programmes" },
-  { src: "/SliderBanner5.png", alt: "Dehi Foundation — Empowering Communities, Building a Better Tomorrow" },
+  { src: "/images/slide-annadaan.jpg", alt: "Volunteers cooking and serving fresh meals at a community kitchen" },
+  { src: "/images/slide-animal-seva.jpg", alt: "Two boys sitting with a litter of street puppies" },
+  { src: "/images/slide-birds.jpg", alt: "A hand feeding grains to a pigeon, with a flock gathered behind" },
+  { src: "/images/slide-green-earth.jpg", alt: "Women planting and tending saplings in a green field" },
+  { src: "/images/slide-community.jpg", alt: "Smiling schoolchildren waving at the camera" },
 ];
 
 const AUTOPLAY_MS = 6000;
