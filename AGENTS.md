@@ -44,7 +44,7 @@ dehi-foundation/
 ├── public/
 │   ├── logo.jpg               # Logo (Header, Hero, and Footer all use /logo.jpg)
 │   ├── images/                # Real photographs (Unsplash License) — NO AI-generated images (client requirement)
-│   │   ├── slide-*.jpg        # BannerSlider slides (annadaan, animal-seva, birds, green-earth, community)
+│   │   ├── slide-*.jpg        # BannerSlider slides (annadaan, animal-seva, birds, community)
 │   │   └── gallery-*.jpg      # Gallery page tiles (Gallery also reuses slide-annadaan.jpg and slide-birds.jpg)
 │   ├── file.svg, globe.svg, next.svg, vercel.svg, window.svg   # create-next-app defaults
 ├── src/
@@ -94,7 +94,7 @@ Section content is defined as **const arrays/objects at the top of each componen
 
 The full-width hero image carousel above the `Hero` intro section. Key behaviors:
 
-- **Slides data:** `SLIDES` const array of `{ src, alt }` pairs pointing to `/images/slide-annadaan.jpg`, `/images/slide-animal-seva.jpg`, `/images/slide-birds.jpg`, `/images/slide-green-earth.jpg`, `/images/slide-community.jpg` — to add/remove slides, edit this array (dot indicators and arrows render dynamically from it).
+- **Slides data:** `SLIDES` const array of `{ src, alt }` pairs pointing to `/images/slide-annadaan.jpg`, `/images/slide-animal-seva.jpg`, `/images/slide-birds.jpg`, `/images/slide-community.jpg` — to add/remove slides, edit this array (dot indicators and arrows render dynamically from it).
 - **Autoplay:** `AUTOPLAY_MS = 6000` interval advances to the next slide; **pauses on hover** (`onMouseEnter`/`onMouseLeave` on the section).
 - **Wrap-around navigation:** `go()` uses modular arithmetic (`(next + SLIDES.length) % SLIDES.length`) so slides wrap infinitely in both directions.
 - **Swipe/drag support:** `drag="x"` with `dragConstraints={{ left: 0, right: 0 }}` and `dragElastic={0.2}`. `SWIPE_THRESHOLD = 60` — dragging beyond ±60px triggers the next/previous slide.

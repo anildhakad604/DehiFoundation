@@ -9,7 +9,6 @@ const SLIDES = [
   { src: "/images/slide-annadaan.jpg", alt: "Volunteers cooking and serving fresh meals at a community kitchen" },
   { src: "/images/slide-animal-seva.jpg", alt: "Two boys sitting with a litter of street puppies" },
   { src: "/images/slide-birds.jpg", alt: "A hand feeding grains to a pigeon, with a flock gathered behind" },
-  { src: "/images/slide-green-earth.jpg", alt: "Women planting and tending saplings in a green field" },
   { src: "/images/slide-community.jpg", alt: "Smiling schoolchildren waving at the camera" },
 ];
 
