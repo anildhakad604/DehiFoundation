@@ -1,16 +1,50 @@
 "use client";
 
 import { useCallback, useEffect, useRef, useState } from "react";
-import Image from "next/image";
+import { getImageProps } from "next/image";
 import { AnimatePresence, motion, type PanInfo } from "framer-motion";
 import { IconChevronLeft, IconChevronRight } from "./icons";
 
-const SLIDES = [
-  { src: "/images/slide-annadaan.jpg", alt: "Volunteers cooking and serving fresh meals at a community kitchen" },
-  { src: "/images/slide-animal-seva.jpg", alt: "Two boys sitting with a litter of street puppies" },
-  { src: "/images/slide-birds.jpg", alt: "A hand feeding grains to a pigeon, with a flock gathered behind" },
-  { src: "/images/slide-community.jpg", alt: "Smiling schoolchildren waving at the camera" },
+type Slide = {
+  /** Wide desktop/tablet banner, 1920x738 (~2.6:1). */
+  src: string;
+  /** Portrait 4:5 phone banner, 1080x1350 — cropped so the subject sits below the quote. */
+  mobileSrc: string;
+  alt: string;
+};
+
+const DESKTOP = { width: 1920, height: 738 };
+const MOBILE = { width: 1080, height: 1350 };
+/** Matches Tailwind's `sm` breakpoint — the banner box switches from 4:5 portrait to 2.6:1 here. */
+const DESKTOP_MEDIA = "(min-width: 640px)";
+
+// Each slide has two straight crops of the same photo (art direction via <picture>):
+// a wide 2.6:1 banner for tablets/desktops and a tall 4:5 one for phones.
+// Order requested by the client: cow, dog, peacock, pigeon, people.
+// Only the dog banner is the client's own photo; the rest are free-licence stock photos
+// (the client's own footage was too low-res):
+//   cow — Monthaye, unsplash.com/photos/b1Ywo-ZKtTs · peacock — Vedang Tandel, unsplash.com/photos/LetZ9fUHaHo
+//   pigeons — Soubhagya Ranjan, unsplash.com/photos/G-rlpIH7-Ag
+//   people — Rajesh S Balouria, pexels.com/photo/20059284 (Pexels License)
+const SLIDES: Slide[] = [
+  { src: "/images/banner-cow.jpg", mobileSrc: "/images/banner-cow-mobile.jpg", alt: "A woman feeding cows resting on a street in India" },
+  { src: "/images/banner-park-dogs.jpg", mobileSrc: "/images/banner-park-dogs-mobile.jpg", alt: "Two street dogs eating their meal on the grass in a park" },
+  { src: "/images/banner-peacock.jpg", mobileSrc: "/images/banner-peacock-mobile.jpg", alt: "A peacock walking through tall green grass" },
+  { src: "/images/banner-pigeons.jpg", mobileSrc: "/images/banner-pigeons-mobile.jpg", alt: "A man scattering grain for a large flock of pigeons" },
+  { src: "/images/banner-people.jpg", mobileSrc: "/images/banner-people-mobile.jpg", alt: "Schoolboys in uniform sitting on a mat, eating a meal from leaf plates" },
 ];
+
+/** Builds the <picture> sources for a slide; the browser downloads only the one matching the screen. */
+function slideImage(slide: Slide) {
+  const common = { alt: slide.alt, sizes: "100vw" };
+  const {
+    props: { srcSet: desktopSrcSet },
+  } = getImageProps({ ...common, ...DESKTOP, src: slide.src });
+  const {
+    props: { srcSet: mobileSrcSet, ...img },
+  } = getImageProps({ ...common, ...MOBILE, src: slide.mobileSrc });
+  return { desktopSrcSet, mobileSrcSet, img };
+}
 
 const AUTOPLAY_MS = 6000;
 const SWIPE_THRESHOLD = 60;
@@ -50,7 +84,7 @@ export function BannerSlider() {
     else if (info.offset.x > SWIPE_THRESHOLD) go(index - 1);
   };
 
-  const slide = SLIDES[index];
+  const { desktopSrcSet, mobileSrcSet, img } = slideImage(SLIDES[index]);
 
   return (
     <section
@@ -59,7 +93,7 @@ export function BannerSlider() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <div className="relative h-[260px] w-full sm:h-[520px] md:h-[600px] lg:h-[680px] xl:h-[740px]">
+      <div className="relative aspect-[4/5] max-h-[780px] w-full sm:aspect-[2.6/1]">
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={index}
@@ -75,15 +109,18 @@ export function BannerSlider() {
             onDragEnd={handleDragEnd}
             className="absolute inset-0 cursor-grab active:cursor-grabbing"
           >
-            <Image
-              src={slide.src}
-              alt={slide.alt}
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority={index === 0}
-              draggable={false}
-            />
+            <picture>
+              <source media={DESKTOP_MEDIA} srcSet={desktopSrcSet} />
+              <source srcSet={mobileSrcSet} />
+              {/* eslint-disable-next-line jsx-a11y/alt-text -- alt comes from getImageProps */}
+              <img
+                {...img}
+                loading="eager"
+                fetchPriority={index === 0 ? "high" : "auto"}
+                draggable={false}
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            </picture>
           </motion.div>
         </AnimatePresence>
 

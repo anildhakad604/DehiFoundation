@@ -43,9 +43,10 @@ npm run lint    # Run ESLint CLI directly (next lint is REMOVED in v16)
 dehi-foundation/
 ├── public/
 │   ├── logo.jpg               # Logo (Header, Hero, and Footer all use /logo.jpg)
-│   ├── images/                # Real photographs (Unsplash License) — NO AI-generated images (client requirement)
-│   │   ├── slide-*.jpg        # BannerSlider slides (annadaan, animal-seva, birds, community)
-│   │   └── gallery-*.jpg      # Gallery page tiles (Gallery also reuses slide-annadaan.jpg and slide-birds.jpg)
+│   ├── images/                # Real photographs only — NO AI-generated images (client requirement)
+│   │   ├── banner-*.jpg       # BannerSlider slides — straight wide crops of the client's photos
+│   │   ├── gallery-video-*.jpg # Gallery tiles captured from the client's field videos
+│   │   └── gallery-*.jpg      # Gallery tiles — the client's own photos (all stock images were removed)
 │   ├── file.svg, globe.svg, next.svg, vercel.svg, window.svg   # create-next-app defaults
 ├── src/
 │   ├── app/
@@ -94,7 +95,9 @@ Section content is defined as **const arrays/objects at the top of each componen
 
 The full-width hero image carousel above the `Hero` intro section. Key behaviors:
 
-- **Slides data:** `SLIDES` const array of `{ src, alt }` pairs pointing to `/images/slide-annadaan.jpg`, `/images/slide-animal-seva.jpg`, `/images/slide-birds.jpg`, `/images/slide-community.jpg` — to add/remove slides, edit this array (dot indicators and arrows render dynamically from it).
+- **Banner box sizing:** `aspect-[4/5] sm:aspect-[2.6/1] max-h-[780px]` — tall 4:5 portrait on phones, 2.6:1 from `sm` (640px) up, so the image is never cropped (fixed heights used to crop the sides at laptop widths or browser zoom).
+- **Mobile banners (art direction):** each slide has a separate portrait 4:5 `mobileSrc` (`banner-*-mobile.jpg`, 1080×1350) cropped for phones with the subject below the quote. Rendered via `getImageProps()` + `<picture>` (`<source media="(min-width: 640px)">` for the wide image), so each device downloads only its own image. Uses `fetchPriority="high"` on the first slide, not `preload` (which would fetch both).
+- **Slides data:** `SLIDES` const array of typed `{ src, mobileSrc, alt }` objects in the client-requested order **cow → dog → peacock → pigeon → people** (`banner-cow.jpg`, `banner-park-dogs.jpg`, `banner-peacock.jpg`, `banner-pigeons.jpg`, `banner-people.jpg`) — 1920×738 (~2.6:1, matches the desktop slider area) straight, edge-to-edge crops. The client rejected multi-photo collages (visible divider lines) and blurred side-fills — use plain crops only and keep subjects in the lower ~75% (the quote overlays the top). The dog banner is the client's own photo. The other four are **free-licence stock photos** (the client's own video frames were too low-res): cow — Monthaye (unsplash.com/photos/b1Ywo-ZKtTs), peacock — Vedang Tandel (unsplash.com/photos/LetZ9fUHaHo), pigeons — Soubhagya Ranjan (unsplash.com/photos/G-rlpIH7-Ag), people — Rajesh S Balouria (pexels.com/photo/20059284, Pexels License; schoolboys eating). The client rejected two earlier people banners (woman serving rice to children; classroom children eating). Swap them for the client's own photos if full-resolution originals arrive. Never use Google Images results (usually copyrighted). To add/remove slides, edit this array (dot indicators and arrows render dynamically from it).
 - **Autoplay:** `AUTOPLAY_MS = 6000` interval advances to the next slide; **pauses on hover** (`onMouseEnter`/`onMouseLeave` on the section).
 - **Wrap-around navigation:** `go()` uses modular arithmetic (`(next + SLIDES.length) % SLIDES.length`) so slides wrap infinitely in both directions.
 - **Swipe/drag support:** `drag="x"` with `dragConstraints={{ left: 0, right: 0 }}` and `dragElastic={0.2}`. `SWIPE_THRESHOLD = 60` — dragging beyond ±60px triggers the next/previous slide.

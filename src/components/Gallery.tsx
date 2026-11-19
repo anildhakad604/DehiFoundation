@@ -1,90 +1,172 @@
 import Image from "next/image";
 import { Reveal } from "./Reveal";
 
-const GALLERY_ITEMS = [
+type GalleryItem = {
+  src: string;
+  alt: string;
+  caption: string;
+  tag: string;
+  /** Grid span classes for the lg 4-column layout (portrait photos use lg:row-span-2). */
+  span: string;
+  /** Optional object-position class to keep the subject in frame when cropped. */
+  position?: string;
+};
+
+const GALLERY_ITEMS: GalleryItem[] = [
+  // Foundation's own field photos (shared by the client)
   {
-    src: "/images/gallery-planting.jpg",
-    alt: "Two pairs of hands planting a young sapling in the soil",
-    caption: "Green Earth Drive — native tree plantation",
-    tag: "Environment",
-    span: "lg:col-span-2",
-  },
-  {
-    src: "/images/gallery-meal-serving.jpg",
-    alt: "Volunteers serving rice and dal from large vessels at an outdoor meal",
-    caption: "Anna Seva — meals for all",
-    tag: "Food",
-    span: "",
-  },
-  {
-    src: "/images/gallery-dog-feeding.jpg",
-    alt: "A hand feeding a street dog on the roadside",
-    caption: "Feeding street animals",
+    src: "/images/gallery-park-dogs.jpg",
+    alt: "Two street dogs eating on the grass in a park",
+    caption: "Daily feeding for park dogs",
     tag: "Animal Seva",
-    span: "",
+    span: "lg:row-span-2",
+    position: "object-[50%_45%]",
   },
   {
-    src: "/images/slide-annadaan.jpg",
-    alt: "Volunteers cooking and serving fresh meals at a community kitchen",
-    caption: "Annadaan — cooking & serving meals",
-    tag: "Food",
-    span: "lg:col-span-2",
-  },
-  {
-    src: "/images/gallery-gau-seva.jpg",
-    alt: "A woman standing with cows under the trees",
-    caption: "Gau Seva — caring for cows",
+    src: "/images/gallery-black-dog.jpg",
+    alt: "A black street dog licking its lips after a meal in the park",
+    caption: "A full stomach, a happy face",
     tag: "Animal Seva",
-    span: "",
+    span: "lg:row-span-2",
+    position: "object-[60%_25%]",
   },
   {
-    src: "/images/gallery-pigeons-water.jpg",
-    alt: "Pigeons drinking from a clay water bowl",
-    caption: "Water bowls for birds",
+    src: "/images/gallery-dog-resting.jpg",
+    alt: "A ginger street dog resting on the grass",
+    caption: "Rest and safety for street dogs",
+    tag: "Animal Seva",
+    span: "lg:col-span-2 lg:row-span-2",
+  },
+  {
+    src: "/images/gallery-dog-meal.jpg",
+    alt: "A street dog sitting on the grass eating its meal",
+    caption: "Food and care for every dog",
+    tag: "Animal Seva",
+    span: "lg:row-span-2",
+    position: "object-[50%_55%]",
+  },
+  {
+    src: "/images/gallery-bread-offering.jpg",
+    alt: "Bread pieces left out for small creatures at the roots of an old tree",
+    caption: "Food for the smallest creatures",
+    tag: "Animal Seva",
+    span: "lg:row-span-2",
+    position: "object-[50%_35%]",
+  },
+  // Frames captured from the foundation's own field videos (shared by the client)
+  {
+    src: "/images/gallery-video-ginger-dog-park.jpg",
+    alt: "A ginger street dog eating its meal on the grass in a tree-lined park",
+    caption: "Morning feeding in the park",
+    tag: "Animal Seva",
+    span: "lg:row-span-2",
+    position: "object-[35%_70%]",
+  },
+  {
+    src: "/images/gallery-video-black-dog-eating.jpg",
+    alt: "A black street dog eating food from the grass",
+    caption: "Nourishing our street companions",
+    tag: "Animal Seva",
+    span: "lg:row-span-2",
+    position: "object-[60%_60%]",
+  },
+  {
+    src: "/images/gallery-video-ginger-dog-eating.jpg",
+    alt: "Close-up of a ginger street dog eating from the ground",
+    caption: "Every meal served with love",
+    tag: "Animal Seva",
+    span: "lg:row-span-2",
+    position: "object-[50%_40%]",
+  },
+  {
+    src: "/images/gallery-video-dog-closeup.jpg",
+    alt: "Close-up of a black street dog resting with treats between its paws",
+    caption: "Small kindness, big gratitude",
+    tag: "Animal Seva",
+    span: "lg:row-span-2",
+    position: "object-[50%_25%]",
+  },
+  {
+    src: "/images/gallery-video-dog-treat.jpg",
+    alt: "A black street dog lying on the grass chewing a treat",
+    caption: "A treat after a long day",
+    tag: "Animal Seva",
+    span: "lg:col-span-2 lg:row-span-2",
+    position: "object-[50%_35%]",
+  },
+  // Gau Seva & birds — frames captured from the foundation's field videos (19 Nov 2026)
+  {
+    src: "/images/gallery-video-cow-bread.jpg",
+    alt: "A cow standing over a pile of bread slices on the roadside, with a crow beside it",
+    caption: "Bread for the cows on our route",
+    tag: "Gau Seva",
+    span: "lg:row-span-2",
+    position: "object-[50%_45%]",
+  },
+  {
+    src: "/images/gallery-video-cow-eating.jpg",
+    alt: "A cow eating bread from a pile on the ground",
+    caption: "Gau Seva — a meal for every cow",
+    tag: "Gau Seva",
+    span: "lg:row-span-2",
+    position: "object-[50%_60%]",
+  },
+  {
+    src: "/images/gallery-video-peacock-feeding.jpg",
+    alt: "A peacock foraging on the grass in a park",
+    caption: "Peacocks foraging in the park",
     tag: "Birds",
-    span: "",
+    span: "lg:col-span-2 lg:row-span-2",
+    position: "object-[50%_35%]",
   },
   {
-    src: "/images/gallery-street-dog.jpg",
-    alt: "A street dog resting on the ground",
-    caption: "Care for street dogs",
-    tag: "Animal Seva",
-    span: "lg:col-span-2",
-  },
-  {
-    src: "/images/gallery-squirrel.jpg",
-    alt: "A palm squirrel (gilhari) eating on a stone wall",
-    caption: "Food for squirrels (gilhari)",
-    tag: "Animal Seva",
-    span: "",
-  },
-  {
-    src: "/images/gallery-puppy.jpg",
-    alt: "A street puppy sitting on the dirt",
-    caption: "Every life matters",
-    tag: "Animal Seva",
-    span: "",
-  },
-  {
-    src: "/images/gallery-pigeons-grain.jpg",
-    alt: "Pigeons eating grain scattered on a wall",
-    caption: "Daana for birds",
+    src: "/images/gallery-video-peacock-leaves.jpg",
+    alt: "A peacock pecking among fallen yellow leaves on the grass",
+    caption: "Protecting birds and their habitat",
     tag: "Birds",
-    span: "lg:col-span-2",
+    span: "lg:col-span-2 lg:row-span-2",
+    position: "object-[50%_30%]",
   },
   {
-    src: "/images/gallery-squirrel-palm.jpg",
-    alt: "A palm squirrel perched on a palm leaf",
-    caption: "Protecting small creatures",
-    tag: "Animal Seva",
-    span: "",
-  },
-  {
-    src: "/images/slide-birds.jpg",
-    alt: "A hand feeding grains to a pigeon, with a flock gathered behind",
-    caption: "Feeding birds every day",
+    src: "/images/gallery-video-peacock-facing.jpg",
+    alt: "A peacock standing on the grass, looking towards the camera",
+    caption: "Our national bird, cared for",
     tag: "Birds",
-    span: "",
+    span: "lg:col-span-2 lg:row-span-2",
+    position: "object-[50%_35%]",
+  },
+  // Annadaan & monkeys — frames from the foundation's field videos (client confirmed filming & consent)
+  {
+    src: "/images/gallery-video-child-meal.jpg",
+    alt: "A young child holding a plate of freshly served food",
+    caption: "Annadaan — a warm plate for every child",
+    tag: "Annadaan",
+    span: "lg:row-span-2",
+    position: "object-[50%_40%]",
+  },
+  {
+    src: "/images/gallery-video-meal-seated.jpg",
+    alt: "Elderly women seated on the roadside with their meals",
+    caption: "Meals for our elders",
+    tag: "Annadaan",
+    span: "lg:row-span-2",
+    position: "object-[35%_50%]",
+  },
+  {
+    src: "/images/gallery-video-monkey-mother.jpg",
+    alt: "A mother monkey holding her baby while eating a banana",
+    caption: "Bananas for the monkeys",
+    tag: "Animal Seva",
+    span: "lg:row-span-2",
+    position: "object-[50%_35%]",
+  },
+  {
+    src: "/images/gallery-video-monkey-troop.jpg",
+    alt: "A troop of monkeys eating bananas by a stone wall",
+    caption: "Feeding the whole troop",
+    tag: "Animal Seva",
+    span: "lg:row-span-2",
+    position: "object-[50%_40%]",
   },
 ];
 
@@ -100,7 +182,8 @@ export function Gallery() {
             Moments from the field
           </h1>
           <p className="mt-4 text-base leading-relaxed text-navy-deep/70">
-            A glimpse into the drives, meals, plantations and rescues made
+            A glimpse into our daily feeding rounds — meals for people in need
+            and care for street animals, cows, monkeys and birds — made
             possible by our volunteers, donors and partners.
           </p>
         </Reveal>
@@ -118,7 +201,7 @@ export function Gallery() {
                   alt={item.alt}
                   fill
                   sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  className={`object-cover ${item.position ?? ""} transition-transform duration-700 group-hover:scale-105`}
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/80 via-navy-deep/10 to-transparent" />
                 <span className="absolute left-4 top-4 rounded-full bg-cream/90 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.15em] text-forest-deep">
