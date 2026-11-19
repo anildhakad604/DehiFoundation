@@ -20,18 +20,18 @@ const DESKTOP_MEDIA = "(min-width: 640px)";
 
 // Each slide has two straight crops of the same photo (art direction via <picture>):
 // a wide 2.6:1 banner for tablets/desktops and a tall 4:5 one for phones.
-// Order requested by the client: cow, dog, peacock, pigeon, people.
+// Order requested by the client: dog, peacock, pigeon, people, cow.
 // Only the dog banner is the client's own photo; the rest are free-licence stock photos
 // (the client's own footage was too low-res):
 //   cow — Monthaye, unsplash.com/photos/b1Ywo-ZKtTs · peacock — Vedang Tandel, unsplash.com/photos/LetZ9fUHaHo
 //   pigeons — Soubhagya Ranjan, unsplash.com/photos/G-rlpIH7-Ag
 //   people — Rajesh S Balouria, pexels.com/photo/20059284 (Pexels License)
 const SLIDES: Slide[] = [
-  { src: "/images/banner-cow.jpg", mobileSrc: "/images/banner-cow-mobile.jpg", alt: "A woman feeding cows resting on a street in India" },
   { src: "/images/banner-park-dogs.jpg", mobileSrc: "/images/banner-park-dogs-mobile.jpg", alt: "Two street dogs eating their meal on the grass in a park" },
   { src: "/images/banner-peacock.jpg", mobileSrc: "/images/banner-peacock-mobile.jpg", alt: "A peacock walking through tall green grass" },
   { src: "/images/banner-pigeons.jpg", mobileSrc: "/images/banner-pigeons-mobile.jpg", alt: "A man scattering grain for a large flock of pigeons" },
   { src: "/images/banner-people.jpg", mobileSrc: "/images/banner-people-mobile.jpg", alt: "Schoolboys in uniform sitting on a mat, eating a meal from leaf plates" },
+  { src: "/images/banner-cow.jpg", mobileSrc: "/images/banner-cow-mobile.jpg", alt: "A woman feeding cows resting on a street in India" },
 ];
 
 /** Builds the <picture> sources for a slide; the browser downloads only the one matching the screen. */
